@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Roboto:wght@100;400;700&display=swap');
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #a3a3a3;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    padding-inline-start: 0;
+}
+
+header {
+    width: 100%;
+    padding: 10px 0.5% 0 0.5%;
+    background: #000000;
+    float: left;
+    position: fixed;
+    top: 0px;
+
+}
+
+header #logo {
+    cursor: pointer;
+    float: left;
+    width: 35%;
+    padding-top: 7px;
+    text-align: center;
+}
+
+header #logo a {
+    font-size: 1.7em;
+    line-height: 45px;
+    margin-left: 40px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#menu {
+    float: right;
+    width: 45%;
+    text-align: center;
+    font-size: 1em;
+    line-height: 30px;
+    margin-bottom: 1em;
+
+}
+
+.navbar ul {
+    list-style: none;
+    position: relative;
+    float: right;
+}
+
+ul.navbar li {
+    float: left;
+    margin: 0;
+    position: relative;
+    margin-right: 7%;
+}
+
+.navbar a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.navbar a:hover {
+    color: #b0b0b0;
+    text-decoration: none;
+}
+
+ul.navbar li ul {
+    margin: 0;
+    position: absolute;
+    background: #000000;
+    left: 10%;
+    font-size: .9em;
+    min-width: 170px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 99;
+    transition: all .1s ease;
+}
+
+ul.navbar ul li {
+    float: none;
+}
+
+ul.navbar li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+    max-height: 250px;
+    transition: 1s;
+}
+
+ul.navbar > li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+    left: 0;
+}
+
+ul.navbar li > ul ul {
+    top: 0;
+    left: 90%;
+}
+
+ul.navbar li > ul li:hover > ul {
+    left: 100%;
+}
+
+
+#top {
+    height: 100%;
+    background-image: url(https://api.kinoart.ru/storage/post/1016/regular_detail_picture-f0fd55b340ac78c069521f5f35c89c61.jpg);
+    background-blend-mode: multiply;
+    background-color: #2e3a44;
+    background-size: cover;
+    padding-left: 90px;
+    color: #ffffff;
+    font-size: 3em;
+    transition: all 1s ease-out;
+}
+
+#top h1 {
+    padding-top: 20%;
+    margin-top: 0rem;
+}
+
+h2:not(:first-child) {
+    border: 2px solid red;
+}
+
+#story {
+    padding: 100px 20%;
+    text-align: justify;
+    background-image: url(https://storge.pic2.me/cm/1366x768/295/5eb714dbee989.jpg);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Caveat', cursive;
+    font-size: 1.5em;
+}
+
+#first_season, #second_season, #third_season, #fourth_season, #fifth_season, #sixth_season, #seventh_season, #eighth_season {
+    padding-top: 70px;
+    margin-top: -70px;
+
+}
+
+.home {
+    margin-left: auto;
+    margin-right: 0;
+    color: midnightblue;
+}
+
+.home > a:hover {
+    text-decoration: none;
+    color: rgb(125, 125, 185);
+}
+
+details {
+    border: 2px solid #000000;
+    border-radius: 1ex;
+}
+
+summary:focus {
+    outline: 0;
+    outline-offset: 0;
+}
