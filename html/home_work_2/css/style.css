@@ -20,7 +20,7 @@ header {
     background: #000000;
     float: left;
     position: fixed;
-    top: 0px;
+    top: 0;
 
 }
 
@@ -131,7 +131,7 @@ ul.navbar li > ul li:hover > ul {
 
 #top h1 {
     padding-top: 20%;
-    margin-top: 0rem;
+    margin-top: 0;
 }
 
 h2:not(:first-child) {
@@ -139,7 +139,7 @@ h2:not(:first-child) {
 }
 
 #story {
-    padding: 100px 20%;
+    padding: 100px 30% 0 5%;
     text-align: justify;
     background-image: url(https://storge.pic2.me/cm/1366x768/295/5eb714dbee989.jpg);
     background-blend-mode: multiply;
@@ -147,9 +147,13 @@ h2:not(:first-child) {
     background-attachment: fixed;
     font-family: 'Caveat', cursive;
     font-size: 1.5em;
+    color: #ffffff;
+}
+.movies video {
+    width: 100%;
 }
 
-#first_season, #second_season, #third_season, #fourth_season, #fifth_season, #sixth_season, #seventh_season, #eighth_season {
+#about {
     padding-top: 70px;
     margin-top: -70px;
 
@@ -167,8 +171,9 @@ h2:not(:first-child) {
 }
 
 details {
-    border: 2px solid #000000;
+    border: 2px solid #ffffff;
     border-radius: 1ex;
+    padding: 10px;
 }
 
 summary:focus {
