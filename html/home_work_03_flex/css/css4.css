@@ -1,0 +1,18 @@
+html, body {
+    height: 99%;
+    margin: 2px;
+    overflow: hidden;
+    color: white;
+}
+.parent {
+    min-height: 99%;
+}
+.parent div{
+    background-color: #2269bb;
+}
+.child div{
+    background-color: #16457a;
+}
+.child{
+    display: flex;
+}

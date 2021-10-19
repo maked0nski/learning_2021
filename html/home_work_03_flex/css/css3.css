@@ -1,0 +1,44 @@
+html, body {
+    height: 99%;
+    margin: 2px;
+    overflow: hidden;
+}
+.parent{
+    height: 99%;
+}
+div{
+    /*border: 1px solid #0707ec;*/
+}
+.wrap_content{
+    display: flex;
+    height: 250px;
+}
+.wrap_post{
+    flex: 4;
+    display: flex;
+}
+.border{
+    border: 1px solid black;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+#header{
+    background-color: #e6f7b0;
+    height: 120px;
+}
+#menu{
+    background-color: #ffb7ff;
+    flex: 1;
+}
+
+.post{
+    background-color: #9fe2ff;
+    flex: 1;
+}
+#footer{
+    background-color: #ffffca;
+    height: 120px;
+}

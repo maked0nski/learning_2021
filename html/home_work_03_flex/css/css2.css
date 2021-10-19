@@ -1,0 +1,45 @@
+html, body {
+    height: 99%;
+    margin: 2px;
+    overflow: hidden;
+}
+
+.parent {
+    /*border: 2px solid #2e3a44;*/
+    min-height: 99%;
+}
+
+.child {
+    display: flex;
+    height: 250px;
+}
+
+.header {
+    background-color: #0c65a7;
+    height: 50px;
+}
+.naw {
+    background-color: #124b78;
+    height: 50px;
+}
+
+.main {
+    background-color: #16a2c5;
+    flex: 3;
+}
+
+.aside {
+    background-color: #5275ad;
+    flex: 1;
+}
+
+.footer {
+    background-color: #7ccce3;
+    height: 50px;
+}
+.bg{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}

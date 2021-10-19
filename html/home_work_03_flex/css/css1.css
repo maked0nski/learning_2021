@@ -1,0 +1,32 @@
+html, body {
+    height: 99%;
+    margin: 2px;
+    overflow: hidden;
+}
+.first {
+    border: 2px solid #2e3a44;
+    border-radius: 10px;
+    min-height: 99%;
+}
+.second {
+    display: flex;
+    height: 250px;
+}
+.bg {
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #a3a3a3;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.a {
+    height: 150px;
+}
+.b {
+    flex-grow: 3;
+}
+.c {
+    flex-grow: 1;
+}
