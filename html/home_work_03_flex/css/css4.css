@@ -1,18 +1,39 @@
 html, body {
-    height: 99%;
-    margin: 2px;
     overflow: hidden;
-    color: white;
 }
 .parent {
-    min-height: 99%;
+    min-height: 90vh;
+    margin: 2px;
+    color: white;
+    flex-direction: column;
 }
-.parent div{
-    background-color: #2269bb;
+.margin{
+    margin: 2px;
 }
 .child div{
     background-color: #16457a;
 }
-.child{
-    display: flex;
+.widgets{
+    height: 150px;
+}
+.contact{
+    height: 200px;
+}
+/*flex-grow: 1*/
+.fg1{
+    flex-grow: 1;
+}
+/*display: flex*/
+.df{
+    display: flex
+}
+/*background-color*/
+.bgc{
+    background-color: #2269bb;
+}
+/*center*/
+.midl{
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
