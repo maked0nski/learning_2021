@@ -14,9 +14,9 @@ div{
     height: 250px;
 }
 .wrap_post{
-    flex: 4;
     display: flex;
     flex-direction: column;
+    flex: 4;
 }
 .border{
     border: 1px solid black;
