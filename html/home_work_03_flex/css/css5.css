@@ -1,0 +1,39 @@
+html, body {
+    height: 98vh;
+    margin: 2px;
+    overflow: hidden;
+}
+.height{
+    height: 99%;
+}
+.bg{
+    background-color: #d9d9d9;
+    margin: 5px;
+}
+
+.df{
+    display: flex;
+}
+.fd{
+    flex-direction: column;
+}
+.fg1{
+    flex-grow: 1;
+}
+.fg2{
+    flex-grow: 2;
+}
+.fg3{
+    flex-grow: 3;
+}
+.radius{
+    border-radius: 10px;
+}
+.border{
+    border: 2px solid black;
+}
+.midl{
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    }
