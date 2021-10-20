@@ -2,6 +2,7 @@ html, body {
     height: 99%;
     margin: 2px;
     overflow: hidden;
+    color: white;
 }
 
 .parent {
@@ -17,10 +18,12 @@ html, body {
 .header {
     background-color: #0c65a7;
     height: 50px;
+
 }
 .naw {
     background-color: #124b78;
     height: 50px;
+
 }
 
 .main {
@@ -42,4 +45,5 @@ html, body {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+    margin: 5px;
 }

@@ -10,6 +10,14 @@ html, body {
     background-color: #d9d9d9;
     margin: 5px;
 }
+.bg1{
+    background-color: #2269bb;
+    margin: 5px;
+}
+.bg2{
+    background-color: #16457a;
+    margin: 5px;
+}
 
 .df{
     display: flex;
@@ -37,3 +45,6 @@ html, body {
     justify-content: center;
     flex-wrap: wrap;
     }
+.color{
+    color: white;
+}
