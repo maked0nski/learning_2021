@@ -1,0 +1,32 @@
+html, body {
+    height: 98vh;
+    margin: 2px;
+    color: black;
+}
+
+.border{
+    border: 1px solid black;
+}
+.bg{
+    background-color: #e7e7e8;
+}
+.margin{
+    margin: 10px;
+}
+.height{
+    height: 50px;
+}
+.height_3{
+    height: 300px;
+}
+.height_54{
+    height: 100px;
+}
+.height_6{
+    height: 75px;
+}
+.header__small{
+    height: 50px;
+    flex-basis: 20%;
+
+}

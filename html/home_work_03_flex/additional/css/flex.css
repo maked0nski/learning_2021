@@ -1,0 +1,29 @@
+.display_flex{
+    display: flex;
+}
+.fDirectionCol{
+    flex-direction: column;
+}
+.flex_grow1{
+    flex-grow: 1;
+}
+.flex_grow2{
+    flex-grow: 2;
+}
+.flex_grow3{
+    flex-grow: 3;
+}
+.flex_grow4{
+    flex-grow: 4;
+}
+.flex_grow6{
+    flex-grow: 6;
+}
+.midl{
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.jcsb{
+    justify-content: space-between;
+}

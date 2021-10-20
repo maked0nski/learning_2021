@@ -61,7 +61,6 @@ html, body {
 }
 .midl_{
     align-content: center;
-    /*justify-content: center;*/
     flex-wrap: wrap;
 }
 .margin{
