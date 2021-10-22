@@ -1,0 +1,120 @@
+:root {
+    --color-bg: #cbd8e0;
+    --color-site: #3ac6e9;
+    --color-content: #124359;
+}
+.border{
+    border: 1px solid red;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg);
+    color: var(--color-content);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none
+}
+
+menu {
+    background-color: var(--color-site);
+    color: var(--color-content);
+    margin-block: 0;
+}
+
+.menu--ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 100px;
+    height: 50px;
+    margin-block: 0;
+}
+
+.menu--ul-list {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+
+}
+header{
+    height: 115px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+}
+.header--logo{
+    background-color: var(--color-content);
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+}
+.header--menu-ul{
+    display: flex;
+    justify-content: flex-end;
+}
+.top{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-site);
+}
+.top--text{
+    width: 700px;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+.top h1{
+    text-transform: uppercase;
+}
+.top--button{
+    background-color: var(--color-content);
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    height: 30px;
+}
+.product{
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-site);
+    border-radius: 50px;
+    margin: 20px 50px;
+    justify-content: space-around;
+}
+.product--items{
+    display: flex;
+}
+.product--items-element{
+    margin: 0 20px;
+    width: 150px;
+}
+.product-picture{
+    background-color: var(--color-content);
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+}
+.product--items-element p{
+    text-align: center;
+}
+.manager{
+    height: 400px;
+    background-color: var(--color-content);
+    display: flex;
+}
+.manager--element{
+    color: white;
+    text-align: center;
+    justify-content: space-around;
+    flex-grow: 1;
+    margin: 20px 5px;
+}
