@@ -1,0 +1,79 @@
+
+
+@media screen and (min-width: 300px) and (max-width: 499px) {
+    body{
+        color: green;
+    }
+    header{
+        display: none;
+    }
+    .top{
+        height: auto;
+        padding: 20px;
+    }
+    .top--text {
+        width: auto;
+    }
+  .product{
+      margin: 10px 10px;
+  }
+  .product--items{
+      flex-direction: column;
+  }
+  .manager{
+      height: auto;
+      display: block;
+  }
+  .manager--element{
+      padding-block: 15px;
+  }
+
+  .main--cards{
+      width: 65%;
+      flex-direction: column;
+  }
+    .main--card2{
+      display: block;
+  }
+
+
+}
+@media screen and (min-width: 500px) and (max-width: 930px) {
+    body{
+        color: red;
+    }
+    .top{
+        height: 450px;
+    }
+    .top--text{
+        width: auto;
+        padding-inline: 10px;
+    }
+    .product{
+        height: auto;
+    }
+    .product--items{
+        flex-direction: column;
+    }
+    .cards-item{
+        flex-basis:auto;
+        margin: 4px;
+    }
+    .main--cards{
+        font-size: 14px;
+    }
+}
+/*!* xs (<=543px) *!*/
+/*@media (max-width: 575px) { ... }*/
+
+/*!* sm (>=576 и <=767) *!*/
+/*@media (min-width: 576px) and (max-width: 767px) { ... }*/
+
+/*!* md (>=768 и <=991) *!*/
+/*@media (min-width: 768px) and (max-width: 991px) { ... }*/
+
+/*!* lg (>=992 и <=1199) *!*/
+/*@media (min-width: 992px) and (max-width: 1199px) { ... }*/
+
+/*!* xl (>=1200) *!*/
+/*@media (min-width: 1200px) { ... }*/
