@@ -5,28 +5,45 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/normalize.css">
+    <title>Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,500&family=Tinos:wght@400;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
 <div class="header">
-    <div class="header__logo">
-        <img src="image/LOGO.png" alt="Logo">
-    </div>
+    <div class="header__top wrapper">
+        <div class="header__logo">
+            <img src="image/LOGO.png" alt="Logo">
+        </div>
+        <div class="header__menu">
+            <div class="header_nav">
+                <div class="header_nav-item"><a href="#">головна</a></div>
+                <div class="header_nav-item"><a href="#">Меню</a></div>
+                <div class="header_nav-item"><a href="#">О нас</a></div>
+                <div class="header_nav-item"><a href="#">бронь</a></div>
+                <div class="header_nav-item"><a href="#"><img src="image/cart.png" alt="Корзина"></a></div>
+            </div>
+            <div class="contact color_white">
+                <div class="contact__phone">
+                    <img class="contact_img" src="image/phone.png" alt="phone"> +999-888-76-54
+                    <p>Свяжитесь с нами для бронирования</p>
+                </div>
+                <button class="contact_button">Заказ столика</button>
+            </div>
 
-    <div class="header_nav">
-        <div class="header_nav-item"><a href="#">головна</a></div>
-        <div class="header_nav-item"><a href="#">Меню</a></div>
-        <div class="header_nav-item"><a href="#">О нас</a></div>
-        <div class="header_nav-item"><a href="#">бронь</a></div>
-        <div class="header_nav-item"><a href="#"><img src="image/Rectangle%2030.png" alt="Корзина"></a></div>
+        </div>
     </div>
-    <div class="contect">
-
+    <div class="wrapper header__main">
+        <h2 class="header__main-p1">Добро пожаловать в </h2>
+        <h1 class="header__main-p2">Наш ресторан</h1>
+        <p class="header__main-p3">Дом лучшей еды</p>
+        <button>view menu</button>
     </div>
 </div>
+
 
 </body>
 </html>
