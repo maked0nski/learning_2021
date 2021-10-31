@@ -27,6 +27,7 @@ a {
 .header {
     height: 100vh;
     background: url("../image/hero_image.jpg") no-repeat center/cover;
+    z-index: 0;
 }
 
 .header__top {
@@ -148,6 +149,7 @@ button {
     width: 87px;
 }
 .intro__item {
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -170,4 +172,77 @@ button {
     line-height: 30px;
     text-align: center;
     margin-block-start: 20px;
+}
+.intro{
+    position: relative;
+    top: -100px;
+    z-index: 1;
+}
+.story__wrap{
+    display: flex;
+    justify-content: space-between;
+}
+.story__discover{
+    width: 444px;
+    height: 422px;
+    text-align: center;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+}
+.story__text h2{
+    font-size: 54px;
+    line-height: 62px;
+    font-family: Tinos;
+    font-style: normal;
+    font-weight: normal;
+}
+.story__text h2 span{
+    color: #D67E34;
+}
+.story__text p{
+    font-size: 16px;
+    line-height: 22px;
+    color: #656363;
+}
+.counter__number{
+    font-size: 40px;
+    line-height: 54px;
+    color: #BC9060;
+}
+.counter__descriptiion{
+    font-size: 20px;
+    line-height: 27px;
+}
+.story__discover-counter{
+    display: flex;
+    justify-content: space-evenly;
+}
+.story__bg{
+    height: 357px;
+    background-image: url("../image/story_bg.png");
+
+}
+.story__text-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+.story__bg-text{
+    color: #ffffff;
+    width: 601px;
+    height: 173px;
+}
+.story__bg-text h3{
+    margin: 0;
+    font-family: Tinos;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 52px;
+    line-height: 60px;
+    color: #D67E34;
+}
+.story__bg-text p{
+    margin: 0;
 }

@@ -7,30 +7,128 @@
     .header__top {
         padding-block-start: 20px;
     }
+
     .header__menu {
         display: none;
     }
-    .header__menu-buttter{
+
+    .header__menu-buttter {
         display: flex;
     }
+
     .header__logo img {
         width: 50px;
     }
-    .header__main{
+
+    .header__main {
         margin: 40% auto;
     }
-    .header__main h2{
-        font-size:  30px;
+
+    .header__main h2 {
+        font-size: 30px;
     }
-    .header__main h1{
-        font-size:  40px;
+
+    .header__main h1 {
+        font-size: 40px;
     }
-    .header__main p::before, .header__main p::after{
+
+    .header__main p::before, .header__main p::after {
         display: none;
     }
-    .intro{
+
+    .intro {
         flex-direction: column;
         row-gap: 14px;
+    }
+
+    .story {
+        width: auto;
+    }
+
+    .story__wrap {
+        justify-content: center;
+        height: 1080px;
+        flex-direction: column;
+    }
+
+    .story__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .story__text h2 {
+        width: 181px;
+        font-size: 40px;
+        line-height: 46px;
+    }
+
+    .story__text p {
+        height: 240px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .story__discover {
+        width: auto;
+        height: auto;
+    }
+
+    .story__img {
+        margin: 40px auto;
+        /*width: 290px;*/
+    }
+
+    .story__img img {
+        width: 335px;
+    }
+
+    .story__text h2 {
+        margin-top: 0;
+    }
+
+    .story__discover-counter {
+        flex-direction: column;
+        row-gap: 19px;
+        align-items: center;
+    }
+    .counter__number{
+        width: 69px;
+        height: 54px;
+    }
+    .story__bg{
+        height: 357px;
+    }
+    .story__bg-text{
+        margin: 20px 15px;
+        width: auto;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+
+    }
+    .story__bg-text h3{
+        font-size: 30px;
+        line-height: 34px;
+        margin-top: 20px;
+        padding-inline: 60px;
+
+    }
+    .story__bg-text p{
+        font-size: 24px;
+        line-height: 33px;
+        margin-inline: 8px;
+        margin-top: 20px;
+    }
+    .story__bg-btn .contact_button{
+        font-size: 14px;
+        line-height: 19px;
+    }
+    .story__text-wrap{
+        flex-direction: column;
+        justify-content: space-around;
     }
 
 
