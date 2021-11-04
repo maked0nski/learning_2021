@@ -13,6 +13,13 @@ html{
     height: 100vh;
     background: url("../image/hero_image.jpg") no-repeat center/cover;
 }
+.navbar a{
+    color: white !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
 .btn{
     background-color: #FF7400;
     border: none;
@@ -126,24 +133,17 @@ html{
     background-image: url("../image/story_bg.png");
 
 }
-
 .story__text-wrap{
     height: 100%;
 }
-
-
 .story__bg-text{
     color: #ffffff;
     width: 601px;
     height: 173px;
 }
 .story__bg-text h3{
-    /*margin: 0;*/
     font-family: Tinos;
     font-size: 52px;
     line-height: 60px;
     color: #D67E34;
-}
-.story__bg-text p{
-    /*margin: 0;*/
 }
