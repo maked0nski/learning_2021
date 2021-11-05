@@ -1,0 +1,147 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #0F2438;
+}
+p{
+    margin: 0 !important;
+}
+a{
+    text-decoration: none;
+    color: #0F2438;
+}
+a:hover, a:focus{
+    color: #0F2438;
+}
+
+.header__black_row-wrap{
+}
+.navbar{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-brand, .navbar-nav .nav-link{
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff !important;
+}
+.header__black_row{
+    background: #0F2438;
+    font-size: 14px;
+    line-height: 16px;
+}
+.header__black_row-left{
+
+}
+.header__black_row-right{
+
+}
+.header__about{
+    padding-inline: 24px;
+}
+.header__about-firm{
+    width: 246px;
+}
+.header__about-firmName h1{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+}
+.header__about-firmName p{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+}
+.header__about-work img, .header__about-adress img{
+    width: 32px;
+    height: 32px;
+}
+
+.header__about-workTime p{
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: right;
+    width: 216px;
+}
+.header__about-adress p{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+}
+.header__about-WhatsApp{
+    background: #E1EFD0;
+    border-radius: 2px;
+    width: 204px;
+    height: 30px;
+}
+.header__about-WhatsApp:hover{
+    cursor: pointer;
+}
+.header__about-WhatsApp img{
+    width: 9px;
+    height: 9px;
+}
+.header__about-WhatsApp p{
+    margin-left: 6px !important;
+    font-family: Rubik, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: right;
+}
+.header__about-telefon{
+    width: 157px;
+}
+.header__about-telefon a{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+}
+.header__about-telefon p{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-decoration-line: underline;
+    text-align: right;
+}
+
+.header__thirdLine{
+
+}
+.header__thirdLine-btnKatalog, .header__thirdLine-seachBTN{
+    background: #005BB9;
+    border-radius: 6px;
+    width: 164px;
+    height: 53px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+.header__thirdLine input{
+    font-size: 14px;
+    line-height: 16px;
+    color: #C2C5DA;
+}
+.header__thirdLine-seachBTN{
+    width: 101px;
+    border-radius: 0px 6px 6px 0px;
+}
+.header__thirdLine-profile img{
+    width: 28px;
+    height: 28px;
+}
+.header__thirdLine-profile-p{
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+}
+
+.header__thirdLine-profile-item{
+    padding-left: 15px;
+}
