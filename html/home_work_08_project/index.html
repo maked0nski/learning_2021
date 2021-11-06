@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<header class="">
+<header class="header">
     <div class=" header__black_row text-white">
         <div class="header__black_row-wrap container d-flex justify-content-between">
             <div class="header__black_row-left">
@@ -80,6 +80,7 @@
             </div>
         </div>
     </div>
+
     <div class="header__about container d-flex justify-content-between align-items-center">
         <div class="header__about-firm d-flex align-items-center">
             <img src="img/header__about-firm.png" alt="Logo">
@@ -113,40 +114,124 @@
         </div>
     </div>
 
-
-
-    <div class="header__thirdLine d-flex">
-        <div class="header__thirdLine-btnKatalog d-flex justify-content-center align-items-center">Каталог</div>
-        <div class="header__thirdLine-seach d-flex">
-            <input type="text" name="" placeholder="Поиск по наименованию или артикулу" id="">
-            <div class="header__thirdLine-seachBTN d-flex justify-content-center align-items-center">Каталог</div>
+    <div class="header__thirdLine container d-flex justify-content-between align-items-center">
+        <div class="header__thirdLine--seach d-flex">
+            <div class="header__thirdLine-Katalog d-flex justify-content-center align-items-center">Каталог</div>
+            <div class="header__thirdLine-seach d-flex">
+                <input type="text" name="" placeholder="Поиск по наименованию или артикулу" id="">
+                <div class="header__thirdLine-seachBTN d-flex justify-content-center align-items-center">Найти</div>
+            </div>
         </div>
-        <div class="container header__thirdLine-profile d-flex justify-content-center align-items-center">
+        <div class="container header__thirdLine-profile d-flex justify-content-end align-items-center">
             <div class="header__thirdLine-profile-login header__thirdLine-profile-item d-flex align-items-center">
                 <img src="img/user.png" alt="Login">
                 <p class="header__thirdLine-profile-p">Войти</p>
             </div>
             <div class="header__thirdLine-profile-favorites header__thirdLine-profile-item  d-flex align-items-center">
-                <img src="img/heart.png" alt="Login">
+                <img src="img/heart.png" alt="heart">
                 <p class="header__thirdLine-profile-p">Избранное</p>
             </div>
             <div class="header__thirdLine-profile-basket header__thirdLine-profile-item  d-flex align-items-center">
-                <img src="img/cart.png" alt="Login">
+                <img src="img/cart.png" alt="cart">
                 <p class="header__thirdLine-profile-p">В корзине нет товаров</p>
             </div>
         </div>
-
-
     </div>
 
-
-
-
-
-
-
-
 </header>
+
+
+
+
+
+<div class="carous container d-flex">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/carousel_bg.png" class="d-block w-100" alt="carousel_bg">
+                <div class="carousel-item-content carousel-caption d-none d-md-flex justify-content-center align-items-center">
+                    <div class="carousel__text-block">
+                        <h2>Сцепление в сборе</h2>
+                        <p class="carousel__partnum">0AMCLUTCH</p>
+                        <p class="carousel__price">14 499,99 ₽ <span>18 550,99 ₽ </span> </p>
+                        <button type="button" class="btn btn-primary">В корзину</button>
+                    </div>
+                    <img src="img/avt-zap_main_page_v01%20(1)%201.png" alt="Сцепление" >
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/carousel_bg.png" class="d-block w-100" alt="carousel_bg">
+                <div class="carousel-item-content carousel-caption d-none d-md-flex justify-content-center align-items-center">
+                    <div class="carousel__text-block">
+                        <h2>Сцепление в сборе</h2>
+                        <p class="carousel__partnum">0AMCLUTCH</p>
+                        <p class="carousel__price">14 499,99 ₽ <span>18 550,99 ₽ </span> </p>
+                        <button type="button" class="btn btn-primary">В корзину</button>
+                    </div>
+                    <img src="img/avt-zap_main_page_v01%20(1)%201.png" alt="Сцепление" >
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/carousel_bg.png" class="d-block w-100" alt="carousel_bg">
+                <div class="carousel-item-content carousel-caption d-none d-md-flex justify-content-center align-items-center">
+                    <div class="carousel__text-block">
+                        <h2>Сцепление в сборе</h2>
+                        <p class="carousel__partnum">0AMCLUTCH</p>
+                        <p class="carousel__price">14 499,99 ₽ <span>18 550,99 ₽ </span> </p>
+                        <button type="button" class="btn btn-primary">В корзину</button>
+                    </div>
+                    <img src="img/avt-zap_main_page_v01%20(1)%201.png" alt="Сцепление" >
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+        </button>
+    </div>
+
+    <div class="promo">
+        <div class="promo__items">
+            <h3>Акция</h3>
+            <div class="promo__item d-flex">
+                <img src="img/avt-zap_main_page_v01%20(1)556.png" alt="">
+                <div class="promo__item-info">
+                    <h2>Обгонная муфта
+                        гидротрансформатор</h2>
+                    <p class="promo__item-part">BW-SP-2 SONNAX</p>
+                    <p class="promo__item-price">4 430₽ <span>5 430₽</span></p>
+                </div>
+            </div>
+            <button type="button"><img src="img/basket.png" alt=""></button>
+        </div>
+        <div class="promo__items">
+            <h3>Акция</h3>
+            <div class="promo__item d-flex">
+                <img src="img/Mask%20Grouptjxyk.png" alt="">
+                <div class="promo__item-info">
+                    <h2>Комплект фрикционных дисков</h2>
+                    <p class="promo__item-part">BW-SP-2 SONNAX</p>
+                    <p class="promo__item-price">4 430₽ <span>5 430₽</span></p>
+                </div>
+            </div>
+            <button type="button"><img src="img/basket.png" alt=""></button>
+
+        </div>
+        
+    </div>
+
+    
+
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
