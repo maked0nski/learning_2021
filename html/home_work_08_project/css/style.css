@@ -504,7 +504,7 @@ a:hover, a:focus {
     max-width: 316px;
 }
 
-.product__item img {
+.product__item-image {
     width: 276px;
     height: 222px;
 
@@ -523,7 +523,7 @@ a:hover, a:focus {
     margin-block-end: 3px;
 }
 
-.product__item-bnt img {
+.market_functuation, .favorite{
     margin-inline-start: 20px;
     height: 21px;
     width: 21px;
@@ -686,7 +686,7 @@ footer {
 }
 
 .footer__content-info {
-    flex-basis: 294px;
+    flex-basis: auto;
 }
 
 .card__visa {
@@ -783,4 +783,5 @@ footer {
     font-size: 16px;
     line-height: 20px;
     color: #737E9B;
+    background: #0E1E2F;
 }

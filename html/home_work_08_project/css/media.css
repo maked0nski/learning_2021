@@ -230,16 +230,19 @@
         display: flex;
         overflow: hidden;
     }
+
     .promo__items {
         margin: 10px 10px 10px 0;
         padding: 15px 15px;
         width: 250px;
         height: 145px;
     }
+
     .promo__items h3 {
         font-size: 12px;
         line-height: 14px;
     }
+
     .promo__items button {
         width: 32px;
         height: 32px;
@@ -247,39 +250,48 @@
         bottom: 15px;
         right: 15px;
     }
+
     .promo__items button img {
         width: 12px;
         height: 12px;
     }
+
     .promo__item {
         width: 195px;
         height: 86px;
     }
+
     .promo__item button img {
         width: 1px;
         height: 74px;
     }
+
     .promo__item img {
         width: 58px;
         height: 54px;
     }
+
     .promo__item-info {
         width: 122px;
     }
+
     .promo__item-info h2 {
         font-size: 12px;
         line-height: 18px;
         width: 125px;
     }
+
     .promo__item-part {
         font-size: 10px;
         line-height: 12px;
     }
+
     .promo__item-price {
         font-size: 14px;
         line-height: 16px;
         margin-block-start: 14px !important;
     }
+
     .promo__item-price span {
         font-size: 12px;
         line-height: 14px;
@@ -291,27 +303,33 @@
         overflow: hidden;
         /*flex-direction: column;*/
     }
+
     .block__slides-item {
         margin-block-start: 10px;
         min-width: 250px;
-        min-widtht: 126px;
+        min-height: 126px;
         overflow: hidden;
     }
+
     .block__slides-item:first-child {
         margin-inline-end: 10px;
     }
+
     .block__slides-item:last-child {
         margin-inline-end: 0;
     }
+
     .slides-item-text {
         width: 120px;
         height: 96px;
         margin: 15px;
     }
+
     .slides-item-text h2 {
         font-size: 16px;
         line-height: 19px;
     }
+
     .slides-item-text p {
         margin-block-start: 10px !important;
         margin-block-end: 15px !important;
@@ -319,6 +337,7 @@
         font-size: 10px;
         line-height: 14px;
     }
+
     .slides-item-btn {
         background: #005BB9;
         border-radius: 4px;
@@ -330,6 +349,7 @@
         color: #FFFFFF;
         text-align: center;
     }
+
     .block__slides-item img {
         width: 74px;
         height: 97px;
@@ -346,14 +366,17 @@
         overflow: hidden;
         justify-content: normal;
     }
+
     .button__block button, .my-btn button {
         font-size: 14px;
         line-height: 16px;
     }
+
     .btn-big {
         width: 160px;
         height: 36px;
     }
+
     .btn-smoll {
         margin-inline: 10px !important;
         width: 82px;
@@ -362,113 +385,183 @@
 
     /*products*/
     .product__item-promo {
-        width: 40px;
-        height: 20px;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 14px;
-        color: #FFFFFF;
-        background: #FFB800;
-        border-radius: 2px;
-        position: absolute;
-        top: 0;
     }
 
     .product__item {
-        max-width: 316px;
+        max-width: 185px;
+        height: 249px;
     }
 
-    .product__item img {
-        width: 276px;
-        height: 222px;
+    .product__item-image {
+        width: 138px;
+        height: 120px;
+    }
 
+    .product__item-bnt .market_functuation {
+        visibility: hidden;
     }
 
     .product__item-bnt .basket {
-        color: white !important;
-        background: #005BB9;
-        border-radius: 6px;
-        width: 160px;
-        height: 49px;
+        font-size: 12px;
+        line-height: 14px;
+        width: 110px;
+        height: 35px;
     }
 
     .product__item-bnt .basket img {
-        margin-inline-end: 8px;
+        margin-inline-end: 7px;
         margin-block-end: 3px;
     }
 
-    .product__item-bnt img {
-        margin-inline-start: 20px;
-        height: 21px;
-        width: 21px;
+    .market_functuation, .favorite {
+        margin-inline-start: 11px;
+        height: 17px;
+        width: 14px;
     }
 
     .rating {
-        position: relative;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 16px;
-        color: #FFB800;
-        margin-block: 12px;
+        font-size: 10px;
+        line-height: 12px;
+        margin-block-start: 2px;
+        margin-block-end: 5px;
+
     }
-    .rating img{
+
+    .rating img {
         margin-inline-end: 3px;
-        width: 16px;
-        height: 16px;
+        width: 12px;
+        height: 12px;
     }
+
     .rating span {
         font-size: 10px;
         line-height: 12px;
         margin-block-start: 2px;
     }
+
     .product__item h3 {
         font-size: 12px;
         line-height: 17px;
     }
+
     .product__item .price_block {
         margin-block-start: 34px;
         margin-block-end: 10px;
     }
+
     .price {
         height: 14px;
         font-size: 12px;
         line-height: 14px;
         color: #000000;
     }
+
     .qwery {
         font-size: 12px;
         line-height: 14px;
     }
+
     .new_price {
         font-weight: bold;
         font-size: 14px;
         line-height: 16px;
     }
+
     .old_price {
         font-size: 10px;
         line-height: 12px;
         margin-inline-start: 5px;
     }
+
     .hr {
         height: 1px;
         background: #E1E5F8;
         margin-block: 25px;
     }
+
     .my-btn {
-        padding-block-start: 25px;
-        padding-block-end: 80px;
+        height: 14px;
+        font-size: 12px;
+        line-height: 14px;
+        padding-block-start: 35px;
+        padding-block-end: 60px;
+    }
+
+    .line {
+        display: none;
+        /*visibility: hidden;*/
+    }
+
+    .news__items {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .news__h3 {
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .news__date {
+        font-size: 10px;
+        line-height: 12px;
+        width: 60px;
+        height: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .news__link a {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .news__text {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .news__item {
+        width: auto;
     }
 
 
+    footer {
+        height: auto;
+        margin-block-start: 70px;
+        font-size: 12px;
+        line-height: 14px;
+    }
 
+    .footer__content {
+        flex-direction: column;
+    }
 
+    .footer__content-item {
+        margin-block-start: 25px;
+        width: auto !important;
+        height: auto !important;
 
+    }
 
+    .footer__content-item-form {
+        flex-direction: column;
+    }
 
+    .card__visa {
+        margin-block-start: 20px;
+        margin-block-end: 25px;
 
+    }
 
+    .footer__content-item h4 {
+        font-size: 14px;
+        line-height: 16px;
+    }
 
-
-
+    .footer__content-item p {
+        margin-block: 10px !important;
+    }
 
 }
