@@ -363,8 +363,16 @@
         padding-top: 30px;
         padding-bottom: 15px;
         display: flex;
+        position: relative;
         overflow: hidden;
         justify-content: normal;
+        margin: 0;
+    }
+
+    .button__block-wrap{
+        position: relative;
+        overflow: hidden;
+
     }
 
     .button__block button, .my-btn button {
@@ -373,19 +381,21 @@
     }
 
     .btn-big {
-        width: 160px;
-        height: 36px;
+        width: 156px !important;
+        height: 36px !important;
+        margin: 0;
     }
 
     .btn-smoll {
         margin-inline: 10px !important;
-        width: 82px;
-        height: 36px;
+        width: 82px !important;
+        height: 36px !important;
     }
 
     /*products*/
     .product__item-promo {
     }
+
 
     .product__item {
         max-width: 185px;
