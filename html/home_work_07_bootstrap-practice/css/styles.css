@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+html{
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 32px;
+}
+.navbar-brand{
+    margin-block-end: 134px;
+}
+.nav-link, .dropdown-item{
+    color: #45494F !important;
+}
