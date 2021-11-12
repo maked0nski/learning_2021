@@ -1,0 +1,33 @@
+
+body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.block {
+    margin-block: 15px;
+    border: solid 1px black;
+    padding: 5px;
+
+}
+
+.question {
+
+}
+
+.input {
+    margin-block-start: 10px;
+    width: 250px;
+    height: 30px;
+}
+
+.btn {
+    height: 35px;
+    background-color: greenyellow;
+}
+
+.answer {
+    color: red;
+    font-size: 18px;
+}
