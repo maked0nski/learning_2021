@@ -1,0 +1,10 @@
+
+.block{
+    margin-inline: 50px;
+}
+.block img{
+    width: 100px;
+}
+.block h2{
+    text-transform: uppercase;
+}
