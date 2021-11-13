@@ -74,7 +74,7 @@ let arrNum = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
 //     1. перебрати його циклом while
 let i = 0;
 while (i < arrNum.length) {
-    // console.log(i);        // Перебираю масив
+    // console.log(arrNum[i]);        // Перебираю масив
     i++
 }
 
@@ -104,13 +104,13 @@ while (i < arrNum.length) {
 }
 // 6. перебрати циклом for та вивести  числа тільки парні  значення
 for (let number of arrNum) {
-    if (number%2===0){
+    if (number % 2 === 0) {
         // console.log(number)
     }
 }
 // 7. замінити кожне число кратне 3 на слово "okten"
 for (let j = 0; j < arrNum.length; j++) {
-    if(arrNum[j]%3===0){
+    if (arrNum[j] % 3 === 0) {
         // arrNum[j] = 'okten'
     }
 }
@@ -118,7 +118,41 @@ for (let j = 0; j < arrNum.length; j++) {
 // 8. вивести масив в зворотньому порядку.
 i = arrNum.length;
 while (i !== 0) {
-        console.log(arrNum[i]);
+    console.log(arrNum[i]);
     i--;
 }
 // 9. всі попередні завдання (окрім 8), але в зворотньому циклі (с заду на перед)
+// 1 с заду на перед
+document.write('<ul>')
+for (let j = listOfItems.length - 1; j >= 0; j--) {
+    document.write(`<li>${listOfItems[j]}</li>`)
+}
+document.write('</ul>')
+
+// 2 с заду на перед
+// <!--template 2.1-->
+for (let j = simpsons.length - 1; j >= 0; j--) {
+    document.write(`<div class="block">${simpsons[j].name} ${simpsons[j].surname} age-${simpsons[j].age} </br>${simpsons[j].info} </br> <img src='${simpsons[j].photo}' alt = '${simpsons[j].name}'/></div>`)
+}
+// <!--template 2.2-->
+for (let j = simpsons.length - 1; j >= 0; j--) {
+    document.write(`<div class="block">`);
+    document.write(`<h2>${simpsons[j].name} ${simpsons[j].surname}. Age is - ${simpsons[j].age}</h2>`);
+    document.write(`<p>${simpsons[j].info}</p>`);
+    document.write(`<img src="${simpsons[j].photo}" alt="${simpsons[j].name}"/>`);
+    document.write(`</div>`);
+}
+
+
+//     1. перебрати його циклом while    с заду на перед
+i = arrNum.length - 1;
+while (i >= 0) {
+    console.log(arrNum[i]);        // Перебираю масив
+    i--
+}
+
+//     2. перебрати його циклом for    с заду на перед
+
+for (let s = arrNum.length - 1; s >= 0; s--) {
+    console.log(arrNum[s]);        // Перебираю масив
+}
