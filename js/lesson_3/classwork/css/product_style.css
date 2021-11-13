@@ -1,0 +1,30 @@
+
+.wrap{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.product-card{
+    flex-basis: 20%;
+    height: 200px;
+    margin: 10px;
+    background-color: #fff3e0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.product-title {
+    text-transform: lowercase;
+    font-size: 14px;
+}
+
+.product-title span {
+    text-transform: uppercase;
+    font-size: 25px;
+}
+.product-image{
+    width: 100px;
+    margin-inline: 20px;
+}

@@ -5,69 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/product_style.css">
     <title>Document</title>
 </head>
 <body>
 
-
-
-<!--template 2.1-->
-<div>
-    NAME- SURNAME- AGE- INFO- <img src="PHOTO" alt="">
-</div>
-
-<!--template 2.2-->
-<div>
-    <h2>NAME SURNAME. age is - AGE</h2>
-    <p>INFO</p>
-    <img src="PHOTO" alt="">
-</div>
-<!--
-інші об'єкти з масиву
-...
-...
-...
--->
-
-<!--template 2.3-->
-<div>
-    <div>
-        <h2>NAME SURNAME. age is - AGE</h2>
-        <p>INFO</p>
-        <img src="PHOTO" alt="">
-    </div>
-    <!--
-інші об'єкти з масиву
-
-    ...
-    ...
-    ...
-    ...
-    -->
-
-
-</div>
-
-
-<!---------------------------------------------->
-
-
-<!--        template 3.1-->
-<div>
-    <div class="product-card">
-        <h3 class="product-title">TITLE. Price - PRICE</h3>
-        <img src="" alt="" class="product-image">
-    </div>
-    <!--
-                інші об'єкти з масиву
-
-                ...
-                ...
-                ...
-
-    -->
-
-</div>
 
 <script>
     /*
@@ -76,11 +18,11 @@
     */
 
     let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
-    document.write('<ul>')
-    for (let listOfItem of listOfItems) {
-        document.write(`<li>${listOfItem}</li>`)
-    }
-    document.write('</ul>')
+    // document.write('<ul>')
+    // for (let listOfItem of listOfItems) {
+    //     document.write(`<li>${listOfItem}</li>`)
+    // }
+    // document.write('</ul>')
 
 
     /*
@@ -127,12 +69,26 @@
         },
     ];
 
+    // // template2.1
+    // for (let simpson of simpsons) {
+    //     document.write(`<div class="block">${simpson.name} ${simpson.surname} age-${simpson.age} </br>${simpson.info} </br> <img src='${simpson.photo}' alt = '${simpson.name}'/></div>`)
+    // }
+    // // template2.2
+    // for (let simpson of simpsons) {
+    //     document.write(`<div class="block">`);
+    //     document.write(`<h2>${simpson.name} ${simpson.surname}. Age is - ${simpson.age}</h2>`);
+    //     document.write(`<p>${simpson.info}</p>`);
+    //     document.write(`<img src="${simpson.photo}" alt="${simpson.name}"/>`);
+    //     document.write(`</div>`);
+    // }
+
 
     /*
     Використовуючи данні з масиву, за допомоги document.write та циклу
-    побудувати структуру по шаблону template3.1 Зробити адекватну стилізацію
-    Великими літерами прописанні властивості об'єкту які потрібно впровадити в шаблон
-        */
+    побудувати структуру по шаблону template3.1 Зробити адекватну
+    стилізацію Великими літерами прописанні властивості об'єкту які
+    потрібно впровадити в шаблон
+    */
     let products = [
         {
             title: 'milk',
@@ -155,6 +111,15 @@
             image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
         },
     ];
+    document.write('<div class="wrap">')
+    for (let product of products) {
+        document.write(`<div class="product-card">`)
+        document.write(`<h3 class="product-title"><span>${product.title}</span>. </br>Price - ${product.price}</h3>`)
+        document.write(`<img src="${product.image}" alt="${product.title}" class="product-image">`)
+        document.write('</div>')
+    }
+    document.write('</div>')
+
 </script>
 
 </body>
