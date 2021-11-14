@@ -128,9 +128,21 @@ let citiesWithId = [
 //             // TO BE CONTINUED .....
 //         ]
 //
+// for (let i = 0; i < usersWithId.length; i++) {
+//     usersWithId[i].address = citiesWithId[citiesWithId.findIndex(arr => arr.user_id === usersWithId[i].id)]
+// }
+console.log(usersWithId);
+
+
 for (let i = 0; i < usersWithId.length; i++) {
-    usersWithId[i].address = citiesWithId[citiesWithId.findIndex(arr => arr.user_id === usersWithId[i].id)]
+    for (let j = 0; j < citiesWithId.length; j++) {
+        if (usersWithId[i].id === citiesWithId[j].user_id) {
+            usersWithId[i].address = citiesWithId[j]
+        }
+    }
 }
+console.log(usersWithId);
+
 
 //
 //
