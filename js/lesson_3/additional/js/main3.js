@@ -27,10 +27,10 @@ function RandomMinMax(a = 1, b = 10) {
     return Math.floor(Math.random() * (b - a)) + a;
 }
 
-// while (arr.length < 50) {
-//     arr.push(Random());
-//     i++
-// }
+while (arr.length < 50) {
+    arr.push(Random());
+    i++
+}
 // console.log(arr);
 
 // d. Заповнити масив 20ма рандомними чисалами в діапазоні від 8 до 732 (Google: Generate random number JS)
@@ -86,7 +86,7 @@ console.log(nextArr);
 //
 let nextArr1 = [100, '', 'lorem', 250, 'cool', 50, 168, true, 120, false, 345, 188];
 let nextArr2 = [];
-for (let nextArrElement of nextArr) {
+for (let nextArrElement of nextArr1) {
     if (typeof (nextArrElement) === "number") {
         nextArr2.push(nextArrElement)
     }
@@ -128,14 +128,52 @@ let citiesWithId = [
 //             // TO BE CONTINUED .....
 //         ]
 //
+for (let i = 0; i < usersWithId.length; i++) {
+    usersWithId[i].address = citiesWithId[citiesWithId.findIndex(arr => arr.user_id === usersWithId[i].id)]
+}
+
 //
 //
 //
 //         - Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
+let arr10 = []
+while (arr10.length < 10) {
+    arr10.push(RandomMinMax(0, 100));
+    i++;
+}
+console.log(`створений масив ${arr10}. треба вивести парні`);
+for (let arr10Element of arr10) {
+    if (arr10Element % 2 === 0) (console.log(arr10Element));
+}
+
 //
 // - Взяти масив з 10 чисел або створити його. Створити 2й порожній масив. За допомогою будь-якого циклу скопіювати значення одного масиву в інший.
 //
+let arr10New   =[];
+for (const arr10NewElement of arr10) {
+    arr10New.push(arr10NewElement)
+}
+console.log(`Створений новий масив , за допомогою цикла ${arr10New}`);
+
 //
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for зібрати всі букви в слово.
+let arr9= [ 'a', 'b', 'c'];
+let NextWord = "";
+for (let j = 0; j < arr9.length ; j++) {
+    NextWord += arr9[j];
+}
+console.log(NextWord);
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу while зібрати всі букви в слово.
+NextWord = "";
+let ell =0;
+while (ell<arr9.length){
+    NextWord += arr9[ell]
+    ell++
+}
+console.log(NextWord);
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for of зібрати всі букви в слово.
+NextWord = "";
+for (let nextWordElement of arr9) {
+    NextWord += nextWordElement
+}
+console.log(NextWord);
