@@ -135,6 +135,19 @@ MinMaxEllArr(arr);
 
 // - створити функцію яка заповнює масив рандомними числами
 // (цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
+function randomNumber() {
+    return Math.round(Math.random() * 100)
+}
+function CreateArr(lengthArr) {
+    let arr = []
+    for (let i = 0; i < lengthArr; i++) {
+        arr.push(randomNumber())
+    }
+    return arr
+}
+
+console.log(CreateArr(10));
+
 
 
 
@@ -154,15 +167,14 @@ function CreateNumArr(lengthArr, randMin, randMax) {
     return arr
 }
 
-CreateNumArr(15, 1,500)
-
+CreateNumArr(15, 1, 500)
 
 
 // - Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
 
 function ReversArr(arr) {
-    let newArr=[]
-    for (let i = arr.length-1; i >= 0; i--) {
+    let newArr = []
+    for (let i = arr.length - 1; i >= 0; i--) {
         newArr.push(arr[i])
     }
     return newArr
