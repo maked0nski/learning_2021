@@ -87,7 +87,7 @@ console.log(nextArr);
 let nextArr1 = [100, '', 'lorem', 250, 'cool', 50, 168, true, 120, false, 345, 188];
 let nextArr2 = [];
 for (let nextArrElement of nextArr1) {
-    if (typeof (nextArrElement) === "number") {
+    if (typeof nextArrElement === "number") {
         nextArr2.push(nextArrElement)
     }
 }

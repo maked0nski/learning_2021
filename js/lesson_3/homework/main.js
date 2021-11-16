@@ -71,20 +71,20 @@ for (const arr5Key in arr5) {
 }
 // - Створити масив з 10 елементів будь-якого типу. Вивести в консоль всі його елементи в циклі.
 let arr6 = ['один', true, 'три', 4, false, 6, 'сім', 8, "дев'ять", true]
-for (i = 0; i < arr6.length; i++) {
+for (let i = 0; i < arr6.length; i++) {
     console.log(arr6[i]);
 }
 
 // - Створити масив з 10 елементів числового, стірчкового і булевого типу. За допомогою if та typeof вивести тільки булеві елементи
 for (const arr6Element of arr6) {
-    if (typeof (arr6Element) === "boolean") {
+    if (typeof arr6Element === "boolean") {
         console.log(arr6Element);
     }
 }
 // - Створити масив з 10 елементів числового, стірчкового і булевого типу.
 //  За допомогою if та typeof вивести тільки числові елементи
 for (const arr6Element of arr6) {
-    if (typeof (arr6Element) === "number") {
+    if (typeof arr6Element === "number") {
         console.log(arr6Element);
     }
 }
@@ -93,7 +93,7 @@ for (const arr6Element of arr6) {
 //      За допомогою if та typeof вивести тільки рядкові елементи
 //
 for (const arr6Element of arr6) {
-    if (typeof (arr6Element) === "string") {
+    if (typeof arr6Element === "string") {
         console.log(arr6Element);
     }
 }
