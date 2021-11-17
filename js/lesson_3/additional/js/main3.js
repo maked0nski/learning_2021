@@ -27,6 +27,18 @@ function RandomMinMax(a = 1, b = 10) {
     return Math.floor(Math.random() * (b - a)) + a;
 }
 
+// від 8 до 732 (Google: Generate random number JS)
+while (arr.length < 20) {
+    arr.push(Math.floor(Math.random() * (732 - 8)) + 8);
+    i++
+}
+
+
+
+
+
+
+
 while (arr.length < 50) {
     arr.push(Random());
     i++
@@ -38,6 +50,7 @@ while (arr.length < 20) {
     arr.push(RandomMinMax(8, 732));
     i++
 }
+
 console.log(arr);
 // 2. Вивести за допомогою console.log кожен третій елемен
 for (let j = 0; j < arr.length; j += 3) {
