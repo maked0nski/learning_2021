@@ -1,11 +1,15 @@
 // - створити функцію, яка якщо приймає один аргумент, просто вивдоить його, 
 // якщо два аргументи - складає або конкатенує їх між собою.
 
+// function ConcatArg(arg1, arg2) {
+//     (typeof arg2 === 'undefined') ? console.log(arg1) : console.log(arg1 + arg2)
+// }
 function ConcatArg(arg1, arg2) {
-    (typeof arg2 === 'undefined') ? console.log(arg1) : console.log(arg1 + arg2)
+    (arguments[1] === undefined) ? console.log(arg1) : console.log(arg1 + arg2)
 }
 
-ConcatArg(1, 2)
+ConcatArg(1)
+
 
 //
 // - створити функцію  яка приймає два масиви та скаладає значення елементів з
