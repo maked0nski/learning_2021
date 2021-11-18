@@ -125,18 +125,33 @@ console.log(muveEllement([9, 8, 0, 4], 2));
     // підскажи логіку, як оптимізувати
 
 
+// function SortZerroInArr(arr) {
+//     let zerro = 0;
+//     let temp = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] !== 0) {
+//             temp.push(arr[i])
+//         } else zerro++
+//     }
+//     for (let i = 0; i < zerro; i++) {
+//         temp.push(0)
+//     }
+//     return temp
+// }
+
+
+// привіт, просто круті роботи , всі чітко зроблено, гарний код та структура. по додатковому питанні
+// з масивом що 0 були вкінці, то поки це норм, так як методів ви не вчили ще. там просто береться
+// 2 пусті масиви спочатку все що більше 0 іде в один а де 0 іде в інший і тоді методом concat
+// просто зливається один в інший . але на даному етапі все дуже круто
+
 function SortZerroInArr(arr) {
-    let zerro = 0;
-    let temp = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] !== 0) {
-            temp.push(arr[i])
-        } else zerro++
-    }
-    for (let i = 0; i < zerro; i++) {
-        temp.push(0)
-    }
-    return temp
+    let zerroArr = [];
+    let numberArr = [];
+    arr.filter(function (e) {
+        (e===0)? zerroArr.push(e):numberArr.push(e)
+    })
+    return numberArr.concat(zerroArr)
 }
 
 console.log(SortZerroInArr([0, 0, 1, 0]));
