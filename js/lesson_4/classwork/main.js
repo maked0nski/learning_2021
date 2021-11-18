@@ -13,8 +13,11 @@
 
 
 function fuMin(a, b, c) {
-    let tmp = a;
-    tmp = (b < tmp) ? b : tmp
+    // let tmp = a;
+    // tmp = (b < tmp) ? b : tmp
+    // console.log((c < tmp) ? c : tmp)
+
+    let tmp = (b < a) ? b : a
     console.log((c < tmp) ? c : tmp)
 }
 
