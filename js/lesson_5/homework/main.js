@@ -13,7 +13,7 @@ console.log(areaRectangle(14, 5));
 
 // - створити функцію яка обчислює та повертає площу кола
 // стрілочним типом
-let areaCircle = (radius) => Math.PI * Math.pow(radius, 2);
+let areaCircle = radius => Math.PI * Math.pow(radius, 2);
 console.log(areaCircle(6));
 
 // Self-Invoking Functions
@@ -36,7 +36,7 @@ console.log(`Площа циліндра ${cilinderArea(5, 9)}`);
 // - створити функцію яка приймає масив та виводить кожен його елемент
 // стрілочним типом
 let nextArr1 = [100, '', 'lorem', 250, 'cool', 50, 168, true, 120, false, 345, 188];
-let iterArr = (arr) => {
+let iterArr = arr => {
     for (let arrElement of arr) {
         console.log(arrElement);
     }
@@ -55,7 +55,7 @@ iterArr(nextArr1);
 
 // - створити функцію яка  створює параграф з текстом. Текст задати через аргумент
 // стрілочним типом
-let textInP = (text) => `<p>${text}</p>`
+let textInP = text => `<p>${text}</p>`
 document.write(textInP('Ехал Грека через реку, Видит Грека – в реке рак. Сунул Грека руку в реку, Рак за руку Греку ЦАП !'));
 
 // Self-Invoking Functions
@@ -66,7 +66,7 @@ document.write(textInP('Ехал Грека через реку, Видит Гр
 
 // - створити функцію яка  створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
 // стрілочним типом
-let listTag = (text) => `<ul><li>${text}</li><li>${text}</li><li>${text}</li></ul>`
+let listTag = text => `<ul><li>${text}</li><li>${text}</li><li>${text}</li></ul>`
 
 document.write(listTag('Текст li стрілочним типом'));
 
@@ -104,7 +104,7 @@ document.write(listTagNumber(`li text`, 2));
 // та будує для них список
 //
 // стрілочним типом
-let arrElementToList = (arr) =>{
+let arrElementToList = arr =>{
     let tmp = ``;
     for (let arrElement of arr) {
         tmp += `<li>${arrElement}</li>`
@@ -133,7 +133,7 @@ let usersWithId = [
 ];
 
 // стрілочним типом
-let fuBlock = (arr) =>  {
+let fuBlock = arr =>  {
     for (let arrElement of arr) {
         document.write(`<div class="block" style="border: 1px solid greenyellow; border-radius: 10px; margin: 10px; padding: 10px"><div class="id">User id - ${arrElement.id}</div><div class="name">User name - ${arrElement.name}</div>div class="age">User age - ${arrElement.age}</div></div>`);
     }
