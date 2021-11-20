@@ -18,6 +18,7 @@
 function findChar(str, char, from) {
     return (str.indexOf(char, from) !== -1) ? str.indexOf(char, from) : false;
 }
+
 function emailValidator(email) {
     let emailChar = findChar(email, '@', 2);
     let pointChar = findChar(email, '.', emailChar + 3)
@@ -104,6 +105,8 @@ coursesArray = [
 //
 //
 // відсортувати його в спадаючому порядку за кількістю елементів в полі modules
+let sortCoursesArray = coursesArray.sort((a, b) => a.modules.length - b.modules.length)
+console.log(sortCoursesArray)
 //
 // - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
 //     let symb = "о", str = "Астрономия это наука о небесных объектах";
