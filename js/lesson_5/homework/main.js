@@ -104,7 +104,7 @@ document.write(listTagNumber(`li text`, 2));
 // та будує для них список
 //
 // стрілочним типом
-let arrElementToList = arr =>{
+let arrElementToList = arr => {
     let tmp = ``;
     for (let arrElement of arr) {
         tmp += `<li>${arrElement}</li>`
@@ -133,7 +133,7 @@ let usersWithId = [
 ];
 
 // стрілочним типом
-let fuBlock = arr =>  {
+let fuBlock = arr => {
     for (let arrElement of arr) {
         document.write(`<div class="block" style="border: 1px solid greenyellow; border-radius: 10px; margin: 10px; padding: 10px"><div class="id">User id - ${arrElement.id}</div><div class="name">User name - ${arrElement.name}</div>div class="age">User age - ${arrElement.age}</div></div>`);
     }
@@ -142,9 +142,9 @@ fuBlock(usersWithId);
 
 
 // Self-Invoking Functions
-    (function (arr) {
-        for (let arrElement of arr) {
-            document.write(`<div class="block" style="border: 1px solid greenyellow; border-radius: 10px; margin: 10px; padding: 10px"><div class="id">User id - ${arrElement.id}</div><div class="name">User name - ${arrElement.name}</div>div class="age">User age - ${arrElement.age}</div></div>`);
-        }
+(function (arr) {
+    for (let arrElement of arr) {
+        document.write(`<div class="block" style="border: 1px solid greenyellow; border-radius: 10px; margin: 10px; padding: 10px"><div class="id">User id - ${arrElement.id}</div><div class="name">User name - ${arrElement.name}</div>div class="age">User age - ${arrElement.age}</div></div>`);
+    }
 
-    }(usersWithId));
+}(usersWithId));
