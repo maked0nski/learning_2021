@@ -55,11 +55,12 @@ function CreateUl_li2(text, x){
     document.write(`</ul>`)
 }
 CreateUl_li2('Текст li', 5)
+
+
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 //
 function CreateList(arr) {
     document.write(`<ul>`)
-
     for (let arrElement of arr) {
         document.write(`<li>${arrElement}</li>`)
     }

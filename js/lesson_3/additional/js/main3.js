@@ -18,6 +18,19 @@ let i = 0;
 // }
 // console.log(arr);
 
+let myArray = new Array (50);
+let p = 0;
+for (let j = 0; j < 50; j++) {
+    while (j < 50) {
+        if (p % 2 !== 0) {
+            arr.push(i)
+        }
+        p++
+    }
+}
+
+console.log(myArray);
+
 //     c. Заповнити масив 20ма рандомними числами. (Google: Generate random number JS)
 function Random() {
     return Math.floor(Math.random() * 100) + 1;

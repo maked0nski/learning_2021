@@ -102,16 +102,43 @@ coursesArray = [
         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
     }
 ];
-//
-//
+
 // відсортувати його в спадаючому порядку за кількістю елементів в полі modules
-let sortCoursesArray = coursesArray.sort((a, b) => a.modules.length - b.modules.length)
+
+//використовуючи метод sort()
+let sortCoursesArray = coursesArray.sort((a, b) => b.modules.length - a.modules.length);
 console.log(sortCoursesArray)
+
+// Без метода sort(). сортировка пузирьком
+const sortCoursesArray1 = arr => {
+    for (let i = 0; i < arr.length - 1; i++) {
+        let flag = false;
+        for (let j = 0; j < arr.length - 1 - i; j++) {
+            if (arr[j].modules.length < arr[j + 1].modules.length) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                flag = true;
+            }
+        }
+        if (!flag) break;
+    }
+    return arr;
+};
+console.log(sortCoursesArray1(coursesArray));
+
+
 //
-// - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
-//     let symb = "о", str = "Астрономия это наука о небесных объектах";
+// - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch
+// у рядку str.
+
+let symb = "о", str = "Астрономия это наука о небесных объектах";
+
+function count(str, stringsearch) {
+
+
+}
 // document.writeln(count(str, symb)) // 5
 //
 // - Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
 //     let str = "Сила тяжести приложена к центру масс тела";
 // document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
+
