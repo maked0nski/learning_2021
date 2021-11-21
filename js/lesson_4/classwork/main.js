@@ -16,7 +16,6 @@ function fuMin(a, b, c) {
     // let tmp = a;
     // tmp = (b < tmp) ? b : tmp
     // console.log((c < tmp) ? c : tmp)
-
     let tmp = (b < a) ? b : a
     console.log((c < tmp) ? c : tmp)
 }
@@ -87,7 +86,7 @@ MinEllArr(arr)
 function SummEllArr(arr) {
     let SummEll = 0;
     for (let arrElement of arr) {
-        if (typeof arrElement === 'number') {
+        if (typeof arrElement === 'number') {     //вирішив перевірити , а чи числа мені підсунулив масиві
             SummEll += arrElement
         } else {
             console.log('В масиве не только цифры')
