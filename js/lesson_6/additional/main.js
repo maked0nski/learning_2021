@@ -126,7 +126,6 @@ const sortCoursesArray1 = arr => {
 console.log(sortCoursesArray1(coursesArray));
 
 
-//
 // - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch
 // у рядку str.
 
