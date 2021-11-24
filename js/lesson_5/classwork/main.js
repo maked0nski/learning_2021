@@ -1,16 +1,20 @@
-function RandomMinMax(randMin = 1, randMax = 10) {
+let randomMinMax = (randMin = 1, randMax = 10) => {
     return Math.floor(Math.random() * (randMax - randMin)) + randMin;
 }
 
-function CreateNumArr(lengthArr, randMin, randMax) {
+let createNumArr = (lengthArr, randMin, randMax) => {
     let arr = []
     let k = 0;
     while (arr.length < lengthArr) {
-        arr.push(RandomMinMax(randMin, randMax));
+        arr.push(randomMinMax(randMin, randMax));
         k++
     }
     return arr
 }
+
+
+
+
 
 
 // Всі функції повинні бути описані стрілочним типом, та selfinvoke!!!!
@@ -59,7 +63,7 @@ let maxArrElement = arr => {
     }
     return maxElement
 }
-let testArr = CreateNumArr(15, 1, 500)
+let testArr = createNumArr(15, 1, 500)
 console.log(testArr)
 console.log(maxArrElement(testArr));
 
@@ -163,16 +167,19 @@ console.log(minMaxNumbArr(testArr));
     return minElement;
 }(testArr));
 
+
+
+
 // - створити функцію яка заповнює масив рандомними числами
 // стрілочним типом
-let RandomArr = length => {
+let randomArr = length => {
     let tmpArr =[]
     for (let i = 0; i < length; i++) {
         tmpArr.push(Math.floor(Math.random()*10));
     }
     return tmpArr
 }
-console.log(RandomArr(90));
+console.log(randomArr(90));
 
 
 // Self-Invoking Functions
@@ -199,6 +206,8 @@ console.log(random());
 }());
 
 
+
+
 // - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент, який характеризує кінцеве значення діапазону.
 // стрілочним типом
 let newArrey = (min, max, lenght) => {
@@ -210,9 +219,7 @@ let newArrey = (min, max, lenght) => {
 };
 console.log(newArrey(5, 600, 12));
 
-
 // Self-Invoking Functions
-
 (function (min, max, lenght) {
     let tmpArr = [];
     for (let i = 0; i < lenght; i++) {
@@ -221,20 +228,20 @@ console.log(newArrey(5, 600, 12));
     console.log(tmpArr);
 }(5, 100, 15))
 
+
+
+
 // - Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
 // стрілочним типом
+// Self-Invoking Functions
 let reversArr = arr => {
     tmpArr = [];
     for (let i = arr.length - 1; i >= 0; i--) {
         tmpArr.push(arr[i]);
     }
-    console.log(arr);
     return tmpArr;
 }
-
 console.log(reversArr(newArrey(5, 600, 12)));
-
-
 
 
 // Self-Invoking Functions
@@ -243,7 +250,6 @@ console.log(reversArr(newArrey(5, 600, 12)));
     for (let i = arr.length - 1; i >= 0; i--) {
         tmpArr.push(arr[i]);
     }
-    console.log(arr);
     console.log(tmpArr);
 }(newArrey(5, 600, 12)))
 
