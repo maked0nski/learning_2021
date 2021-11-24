@@ -33,8 +33,6 @@ console.log(strToLowerCase('LOREM IPSUM'));
 console.log(strToLowerCase('JAVASCRIPT IS COOL'));
 
 
-
-
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 //
 let cleanString = str => {
@@ -77,7 +75,6 @@ let str1 = "HTML JavaScript PHP";
 document.writeln(insert_dash(str1));
 
 
-
 //
 // - Напишіть функцію, яка приймає рядок як аргумент і перетворює регістр
 // першого символу рядка з нижнього регістру у верхній.
@@ -85,6 +82,7 @@ document.writeln(insert_dash(str1));
 function firstLetterCapitalized(str) {
     return str.replace(str[0], strToUppercase(str[0]))
 }
+
 document.writeln(`<p>${firstLetterCapitalized('функцію приймає рядок як аргумент і перетворює регістр\n' +
     ' першого символу рядка з нижнього регістру у верхній')}</p>`);
 
@@ -99,7 +97,9 @@ function capitalize(str) {
     return str
         .toLowerCase()
         .split(' ')
-        .map(value => value.replace(value[0], value[0].toUpperCase()))
+        // .map(value => value.replace(value[0], value[0].toUpperCase()))
+        .map(word => word.charAt(0).toUpperCase() + word.substr(1))
         .join(' ');
 }
+
 console.log(capitalize(str))
