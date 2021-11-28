@@ -29,66 +29,86 @@
 
 
 // // підкажіть чи можна таким способом виконати це завдання, але в мене не вийшло додати при створенні let person5 =  new Person( 1, 'Leanne Graham', 'Bret', 'Sincere@april.biz', adress ???, ) та решта вкладені
-// class Geo {
-//     constructor(lat, lng) {
-//         this.lat = lat;
-//         this.lng = lng;
-//     }
-// }
-// class Address {
-//     constructor(street, suite, city, zipcode) {
-//         this.street = street;
-//         this.suite = suite;
-//         this.city = city;
-//         this.zipcode = zipcode;
-//         this.geo = new Geo();
-//     }
-// }
-// class Company {
-//     constructor(name, catchPhrase, bs) {
-//         this.name = name;
-//         this.catchPhrase = catchPhrase;
-//         this.bs = bs;
-//     }
-// }
-// class Person {
-//     constructor(id, name, username, email, address, phone, website, company) {
-//         this.id = id;
-//         this.name = name;
-//         this.username = username;
-//         this.email = email;
-//         this.address = new Address();
-//         this.phone = phone;
-//         this.website = website;
-//         this.company = new Company();
-//     }
-// }
-
-
-
-
+class Geo {
+    constructor(lat, lng) {
+        this.lat = lat;
+        this.lng = lng;
+    }
+}
+class Address {
+    constructor(street, suite, city, zipcode, lat, lng) {
+        this.street = street;
+        this.suite = suite;
+        this.city = city;
+        this.zipcode = zipcode;
+        this.geo = new Geo(lat, lng);
+    }
+}
+class Company {
+    constructor(companyName, catchPhrase, bs) {
+        this.name = companyName;
+        this.catchPhrase = catchPhrase;
+        this.bs = bs;
+    }
+}
 class Person {
-    constructor(id, name, username, email, street, suite, city, zipcode, lat, lng, phone, website, companyName, companyCatchPhrase, companyBs) {
+    constructor(id, name, username, email, street, suite, city, zipcode,lat, lng, phone, website, companyName, catchPhrase, bs ) {
         this.id = id;
         this.name = name;
         this.username = username;
         this.email = email;
-        this.address = {
-            street: street,
-            suite: suite,
-            city: city,
-            zipcode: zipcode,
-            geo: {lat: lat, lng: lng}
-        };
+        this.address = new Address(street, suite, city, zipcode, lat, lng);
         this.phone = phone;
         this.website = website;
-        this.company = {
-            name: companyName,
-            catchPhrase: companyCatchPhrase,
-            bs: companyBs
-        };
+        this.company = new Company(companyName, catchPhrase, bs);
     }
 }
+
+
+
+//
+// class Person {
+//     constructor(id, name, username, email, street, suite, city, zipcode, lat, lng, phone, website, companyName, companyCatchPhrase, companyBs) {
+//         this.id = id;
+//         this.name = name;
+//         this.username = username;
+//         this.email = email;
+//         this.address = {
+//             street: street,
+//             suite: suite,
+//             city: city,
+//             zipcode: zipcode,
+//             geo: {lat: lat, lng: lng}
+//         };
+//         this.phone = phone;
+//         this.website = website;
+//         this.company = {
+//             name: companyName,
+//             catchPhrase: companyCatchPhrase,
+//             bs: companyBs
+//         };
+//     }
+// }
+//
+// let person1 = new Person(
+//     1,
+//     'Leanne Graham',
+//     'Bret',
+//     'Sincere@april.biz',
+//     'Kulas Light',
+//     'Apt. 556',
+//     'Gwenborough',
+//     '92998-3874',
+//     '-37.3159',
+//     '81.1496',
+//     '1-770-736-8031 x56442',
+//     'hildegard.org',
+//     'Romaguera-Crona',
+//     'Multi-layered client-server neural-net',
+//     'harness real-time e-markets'
+// )
+//
+
 
 let person1 = new Person(
     1,
