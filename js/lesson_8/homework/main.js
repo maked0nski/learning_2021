@@ -22,15 +22,9 @@ document.getElementById('rules').innerText = "замініть текст пар
 
 
 
-
+// -- змініть кожному елементу   колір фону на червоний
 function allEllementRec(tag) {
-
-    // -- змініть кожному елементу   колір фону на червоний
     tag.classList.add('redBackgroundColor')
-
-    // -- змініть кожному елементу колір тексту на синій
-    tag.classList.add('blueTextColor')
-
     if (tag.children.length) {
         for (const element of tag.children) {
             allEllementRec(element);
@@ -40,7 +34,11 @@ function allEllementRec(tag) {
 allEllementRec(document.body);
 
 
-
+// -- змініть кожному елементу колір тексту на синій
+let AllElement = document.body.children;
+for (const AllElementElement of AllElement) {
+    AllElementElement.style.color = 'blue';
+}
 
 // -- отримати весь список класів елемента з id=rules і вивести їх в console.log
 let RulesClassList = document.getElementById('rules').classList

@@ -1,26 +1,19 @@
-function userCard(number) {
-    // let keyArr = [];    //TODO
-    let balance = 100;
-    let transactionLimit = 100;
-    let historyLogs = [];
-    this.key = (function (number) {
-        // if (keyArr.indexOf(number) !== -1) return console.error(`Ця карта вже існує`)
-        if (number < 0 && number > 3) return console.error(`Введіть число в діапазоні від 1 до 3`)
-        return number
-    }(number));
-    this.balance = balance;
-    this.transactionLimit = transactionLimit;
-    this.historyLogs = historyLogs;
+let nextKey = 1;
 
+function UserCard() {
+    this.key = (![1, 2, 3].includes(nextKey)) ? (console.error(`Введіть число в діапазоні від 1 до 3`)) : (nextKey++);
 
+    this.balance = 100;
+    this.transactionLimit = 100;
+    this.historyLogs = [];
 
     this.getCardOptions = function () {
-        return {
+        return ({
             balance: this.balance,
             transactionLimit: this.transactionLimit,
             historyLogs: this.historyLogs,
             key: this.key
-        }
+        })
     };
 
     function operationTime() {
@@ -90,8 +83,9 @@ function userCard(number) {
 }
 
 
-// const card3 = new userCard(3);
-// const card1 = new userCard(2);
+// const card3 = new UserCard();
+// const card1 = new UserCard();
+//
 // // debugger
 // card3.putCredits(150);
 // card3.setTransactionLimit(5000);
@@ -106,34 +100,50 @@ class UserAccount {
         this.cards = []
     };
 
+    setCartInArr(arr) {
+        this.cards.push(arr)
+    }
 
     addCard() {
-        if (this.cards.length > 2) return console.error(`Ви не можете мати більше 3-х карт`)
-        let cardName = userCard(this.cards.length + 1).getCardOptions()
-        console.log(cardName.getCardOptions());
-        this.cards.push(cardName);
-        console.log(this.cards)
+        if (this.cards.length < 3) {
+            let newCard = new UserCard();
+            this.setCartInArr(newCard)
+            // let nameCard = `${this.name}Card${this.cards.length+1}`;
+            // this.setCartInArr(`${this.name}Card${this.cards.length+1}`);
+            return newCard
+        } else {
+            return console.error(`Ви не можете мати більше 3-х карт`)
+        }
     };
 
     getCardByKey(number) {
-        if (this.cards.indexOf(number) === -1) {
+        console.log(this.cards[number-1])
+        if (this.cards[number-1] === undefined) {
             return console.error(`Ви не маєте карти під цим номером`)
         } else {
-            return this.cards[number-1]
+            return this.cards[number-1].getCardOptions()
         }
     }
 
 
 }
 
-let user = new UserAccount('Bob');
-user.addCard()
-user.addCard()
-let card1 = user.getCardByKey(1);
-let card2 = user.getCardByKey(2);
+let userBob = new UserAccount('Bob');
+userBob.addCard()
+let cart_1 = userBob.addCard()
+let cart_2 = userBob.addCard()
+console.log(cart_1.getCardOptions());
+console.log(cart_2.getCardOptions());
+
+let card1 = userBob.getCardByKey(1);
+let card2 = userBob.getCardByKey(2);
+
+
+
 card1.putCredits(500);
 card1.setTransactionLimit(800);
 card1.transferCredits(300, card2);
 card2.takeCredits(50);
 console.log(card1.getCardOptions());
-
+console.log(card2.getCardOptions());
+//
