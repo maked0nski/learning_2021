@@ -78,8 +78,6 @@ function UserCard() {
         this.takeCredits(comision += money * 0.5);
         cardNumber.putCredits(money)
     };
-
-
 }
 
 
@@ -108,42 +106,39 @@ class UserAccount {
         if (this.cards.length < 3) {
             let newCard = new UserCard();
             this.setCartInArr(newCard)
-            // let nameCard = `${this.name}Card${this.cards.length+1}`;
-            // this.setCartInArr(`${this.name}Card${this.cards.length+1}`);
             return newCard
         } else {
             return console.error(`Ви не можете мати більше 3-х карт`)
         }
+
     };
 
-    getCardByKey(number) {
-        console.log(this.cards[number-1])
+     getCardByKey(number) {
         if (this.cards[number-1] === undefined) {
             return console.error(`Ви не маєте карти під цим номером`)
         } else {
-            return this.cards[number-1].getCardOptions()
+            return this.cards[number-1]
         }
-    }
-
+    };
 
 }
 
 let userBob = new UserAccount('Bob');
 userBob.addCard()
-let cart_1 = userBob.addCard()
-let cart_2 = userBob.addCard()
-console.log(cart_1.getCardOptions());
-console.log(cart_2.getCardOptions());
-
-let card1 = userBob.getCardByKey(1);
-let card2 = userBob.getCardByKey(2);
+let card1 = userBob.getCardByKey(1)
+userBob.addCard()
+let card2 = userBob.getCardByKey(2)
 
 
+console.log(card1)
+console.log(card2)
+console.log(card1.getCardOptions());
+console.log(card2.getCardOptions());
 
 card1.putCredits(500);
 card1.setTransactionLimit(800);
 card1.transferCredits(300, card2);
 card2.takeCredits(50);
+
 console.log(card1.getCardOptions());
 console.log(card2.getCardOptions());
-//

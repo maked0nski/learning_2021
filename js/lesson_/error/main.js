@@ -58,6 +58,9 @@ console.log(sumNumb(1234));
 
 
 
+
+
+
 // console.log({})
 // for (let number of [1,2,3,4,5]) {
 //     if (!(number%2)){
