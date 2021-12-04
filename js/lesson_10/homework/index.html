@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .hiden {
+            display: none;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: greenyellow;
+        }
+        li{
+            list-style-type: none;
+        }
+        ul{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+<div id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae enim et maiores nam neque nisi obcaecati
+    placeat voluptas. Ad amet at distinctio, impedit nam provident quam quas repudiandae temporibus veniam.
+</div>
+<button onclick="hidenBlock('text')">исчезнет элемент с id="text"</button>
+<hr>
+<button id="button" onclick="hidenBlock('button')">кнопка при нажатии будет скрывать сама себя</button>
+<hr>
+<input type="text" placeholder="Вкажіть Ваш вік" id="inputAge">
+<input type="button" value="Підтвердиди вік" onclick="verifyAge()">
+<span id="verifyAgeSpan"></span>
+<hr>
+
+<div>
+    <div id="menuTitle" >Заголовок меню</div>
+    <ul id="menu">
+        <li>Пункт 1</li>
+        <li>Пункт 2</li>
+        <li>Пункт 3</li>
+        <li>Пункт 4</li>
+        <li>Пункт 5</li>
+    </ul>
+</div>
+<hr>
+
+
+<script src="main.js"></script>
+</body>
+</html>

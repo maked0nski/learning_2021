@@ -8,3 +8,6 @@ li{
 img{
     width: 30px;
 }
+li{
+    list-style-type: square;
+}
