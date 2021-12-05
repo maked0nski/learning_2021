@@ -58,8 +58,6 @@ let usersWithAddress = [
 // Данные выводить в документ
 
 
-
-let element = document.forms.userList.elements;
 let statusChek = {status: 0, age: 0, city: 0}
 
 function filterArr() {
@@ -93,22 +91,31 @@ function filterArr() {
     }
 
     if (newArr.length) {
-        return newArr
-    } else return usersWithAddress
+        return outputData(newArr)
+    } else return outputData(usersWithAddress)
 }
-
 
 function statusCheker() {
     let x = document.forms.userList.elements;
     for (const Key in statusChek) {
         statusChek[Key] = x[Key].checked
     }
+    filterArr()
+}
+
+function outputData(arr) {
+    listUsers = document.getElementById('listUsers');
+    listUsers.innerText = ''
+    arr.forEach(value => {
+        let arrDiv = document.createElement('div')
+        arrDiv.innerText = `${value.id} - ${value.name} - ${value.age} - ${value.status} - ${value.address.city}`
+        listUsers.append(arrDiv)
+    })
 }
 
 let formId = document.getElementById('userList')
-formId.addEventListener('change', ()=>{
+formId.addEventListener('change', () => {
     statusCheker()
-    console.log(filterArr());
 })
 
 
