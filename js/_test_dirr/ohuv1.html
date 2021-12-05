@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<label><input type="text" id="rows" value="2" style="font-family: Verdana; font-size: 12px; margin-left: 15px; width: 50px;">Количество строк (rows)</label>
+<label><input type="text" id="columns" value="3" style="font-family: Verdana; font-size: 12px; margin-left: 15px; width: 50px;">Количество столбцов (columns)</label>
+
+<label><input type="text" id="table-width" value="300px" style="font-family: Verdana; font-size: 12px; margin-left: 15px; width: 50px;">Ширина таблицы (width)</label>
+<label><input type="text" id="table-height" value="200px" style="font-family: Verdana; font-size: 12px; margin-left: 15px; width: 50px;">Высота таблицы (height)</label>
+<p><label><input type="checkbox" id="checkbox" value="Рамка" style="margin-left: 15px">Рамка</label></p>
+<button id="create" onclick="addTable();" style="background-color: lime; margin: 5px 15px">Create table</button>
+<button id="create" onclick="destroyTable();" style="background-color: red; margin: 5px 15px">Destroy table</button>
+<script>
+
+    function addTable() {
+        var body = document.querySelector("body"),
+            tableWidth = document.getElementById("table-width"),
+            tableHeight = document.getElementById("table-height"),
+            width = tableWidth.value,
+            height = tableHeight.value,
+            numRows = document.getElementById("rows"),
+            numColumns = document.getElementById("columns"),
+            rows = numRows.value,
+            columns = numColumns.value,
+            tr = "",
+
+            td = "",
+            firstTable = document.querySelector("table");
+        console.log(width);
+        console.log(height);
+        console.log(rows);
+        console.log(columns);
+
+        table = document.createElement("table"),
+            checkbox = document.getElementById("checkbox");
+        if (checkbox.checked === true) {
+            table.setAttribute("border", "2px");
+        } else {
+            table.setAttribute("border", "0");
+        }
+        table.setAttribute("width", width);
+        table.setAttribute("height", height);
+        for (var i = 0; i < rows; i++) {
+            tr = document.createElement("tr");
+            for (var j = 0; j < columns; j++) {
+                td = document.createElement("td");
+                text = document.createTextNode((i + 1) + "." + (j + 1));
+                td.appendChild(text);
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        console.log(tr);
+        console.log(td);
+        if (firstTable == null) {
+            return body.appendChild(table);
+        } else {
+            var newTable = body.appendChild(table);
+            return document.body.replaceChild(newTable, firstTable);
+        }
+    }
+
+    function destroyTable() {
+        var body = document.querySelector("body"),
+            table = document.querySelector("table"),
+            checkbox = document.getElementById("checkbox")
+        tableWidth = document.getElementById("table-width"),
+            tableHeight = document.getElementById("table-height"),
+            numRows = document.getElementById("rows"),
+            numColumns = document.getElementById("columns");
+        if (document.querySelector("table") != null) {
+            document.body.removeChild(table);
+            checkbox.checked = false;
+            tableWidth.value = "";
+            tableHeight.value = "";
+            numRows.value = "";
+            numColumns.value = "";
+        }
+    }
+
+</script>
+</body>
+</html>

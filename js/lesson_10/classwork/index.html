@@ -9,6 +9,29 @@
 </head>
 <body>
 
+<form id="nameUser">
+<p><input placeholder="Ваше Прізвище" name="firstName" form="nameUser"></p>
+<p><input placeholder="Ваше имя" name="secondName" form="nameUser"></p>
+</form>
+<form id="dataUser">
+    <p><input placeholder="Ваш вік" name="Age" form="dataUser"></p>
+    <p><input placeholder="Ваша стать" name="sex" form="dataUser"></p>
+</form>
+<p><input type="submit" value="Отправить форму" onclick="getFormData()"></p>
+
+<form id="tables">
+    <p><input placeholder="Кількість рядків" name="row" form="tables"></p>
+    <p><input placeholder="Кількість ячеек" name="column" form="tables"></p>
+    <p><input placeholder="вмиіст ячеєк" name="text" form="tables"></p>
+</form>
+<p><input type="submit" value="Заповнити таблицю" onclick="createTable()"></p>
+
+<form  id="checkMat">
+<p><input type="text" name='stroka' form="checkMat"></p>
+</form>
+<button type="submit"  onclick="checkMat()">Перевірити чи є матюки</button>
+<div id="divRezult"></div>
+
 
 <script src="main.js"></script>
 </body>
