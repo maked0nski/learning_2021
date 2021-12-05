@@ -95,14 +95,6 @@ function filterArr() {
     } else return outputData(usersWithAddress)
 }
 
-function statusCheker() {
-    let x = document.forms.userList.elements;
-    for (const Key in statusChek) {
-        statusChek[Key] = x[Key].checked
-    }
-    filterArr()
-}
-
 function outputData(arr) {
     listUsers = document.getElementById('listUsers');
     listUsers.innerText = ''
@@ -115,7 +107,11 @@ function outputData(arr) {
 
 let formId = document.getElementById('userList')
 formId.addEventListener('change', () => {
-    statusCheker()
+    let x = document.forms.userList.elements;
+    for (const Key in statusChek) {
+        statusChek[Key] = x[Key].checked
+    }
+    filterArr()
 })
 
 
