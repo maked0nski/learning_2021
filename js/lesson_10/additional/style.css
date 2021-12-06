@@ -1,0 +1,18 @@
+.photoGallery{
+    width: 640px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#photoGallery .photo img{
+    width: 200px;
+    display: none;
+}
+
+
+.buttons {
+    margin-top: 20px;
+}
+.red{
+    color: red;
+}

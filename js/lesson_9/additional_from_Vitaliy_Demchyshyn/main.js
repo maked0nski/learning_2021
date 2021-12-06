@@ -9,6 +9,22 @@
 let arr = [1, 2, 3, 4, 2, 5, 1];
 
 
+function uniqueArray1( arr ) {
+    debugger
+
+    var newArr = {};
+
+    arr.forEach( function(v) {
+        newArr[v+ '::' + typeof v] = v;
+    });
+
+    return Object.keys(newArr).map(function(v){
+        return newArr[v];
+    });
+}
+
+
+
 function UniqueArray(arr) {
     let newArr = [];
     arr.forEach(value => {
@@ -19,4 +35,5 @@ function UniqueArray(arr) {
     return newArr;
 }
 
+console.log(uniqueArray1(arr))
 console.log(UniqueArray(arr))

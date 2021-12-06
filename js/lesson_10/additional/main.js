@@ -6,7 +6,7 @@
 // document.body.onclick = function (ev) {
 //     console.log(`Ви вибрали елемент з тегом ${ev.target.localName}, id: ${ev.target.id}, список класов: ${ev.target.classList.value}, Ширина*Висота блока : ${ev.target.offsetWidth}px * ${ev.target.offsetHeight}px`)
 // }
-
+//
 
 // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
 //     При лівому кліку миші  зробить popup (спливаючий блок) в якому буде вся інформація про блок.
@@ -50,6 +50,7 @@ let usersWithAddress = [
     {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
     {id: 11, name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
 ];
+
 // - Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать
 // как вместе так и по отдельности.
 // 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
@@ -96,7 +97,7 @@ function filterArr() {
 }
 
 function outputData(arr) {
-    listUsers = document.getElementById('listUsers');
+    let listUsers = document.getElementById('listUsers');
     listUsers.innerText = ''
     arr.forEach(value => {
         let arrDiv = document.createElement('div')
@@ -115,17 +116,82 @@ formId.addEventListener('change', () => {
 })
 
 
+// // *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .
+// // Функция создает в боди 2 кнопки (назад/вперед)
+// // при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы
+// // переходите к следующему дочернему элементу (лежащему на одном уровне)
+// // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти
+// // внутрь элемента и  выводит первого ребенка. и тд.
+// //     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему,
+// //     лежащему с ним на одном уровне
+// //
+// // parentElement: form#userList
+// // parentNode: form#userList
+// // children: HTMLCollection(1)
+// // childElementCount: 4
+//
+// function overdoseRecursion(arr) {
+//     console.log(arr.localName)
+//     if (typeof arr === 'object') {
+//         // for (let i = 0; i < arr.length; i++)
+//
+//     }
 //
 //
-// *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
-// при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
-// НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
-//     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
+//     console.log(arr);
+//     return arr
+// }
 //
+// let button = document.body.querySelectorAll('button')
+// button[1].addEventListener('click', () => {
+//     overdoseRecursion(arr)
+// })
+// let arr = overdoseRecursion(document.getElementById('userList'))
+
+
+
+
+
+
+
+
+
+
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+
+let btn_prev = document.querySelector('#photoGallery .buttons .prev');
+let btn_next = document.querySelector('#photoGallery .buttons .next');
+let images = document.querySelectorAll('#photoGallery .photo img');
+let i = 0;
+images[i].style.display = 'block';
+
+btn_next.onclick = function () {
+    images[i].style.display = 'none';
+    i++
+    if (i >= images.length) {
+        i = 0;
+    }
+    images[i].style.display = 'block';
+}
+
+btn_prev.onclick = function () {
+    images[i].style.display = 'none';
+    i = i - 1;
+    if (i < 0) {
+        i = images.length - 1;
+    }
+    images[i].style.display = 'block';
+}
+
+
 //
 //     Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
 // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
-
+let mouseup = document.body
+mouseup.addEventListener('mouseup', function (ev) {
+    sellectText = window.getSelection().toString()
+    temp = ev.target.innerHTML
+    ev.target.innerHTML = temp.replace(sellectText, `<span class="red">${sellectText}</span>`)
+})
 
 
