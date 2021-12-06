@@ -9,20 +9,26 @@
 let arr = [1, 2, 3, 4, 2, 5, 1];
 
 
-function uniqueArray1( arr ) {
-    debugger
+function uniqueArray1(arr) {
 
     var newArr = {};
-
-    arr.forEach( function(v) {
-        newArr[v+ '::' + typeof v] = v;
+    arr.forEach(function (v) {
+        if (typeof newArr[v]=='undefined'){
+            newArr[v] = +v
+        }else newArr[v] = 'duble'
     });
-
-    return Object.keys(newArr).map(function(v){
-        return newArr[v];
-    });
+    return Object.keys(newArr).filter(function (v) {
+        if (newArr[v]!=='duble') {
+            return newArr[v]
+        }
+    }
+    // return Object.keys(newArr).map(function (v) {
+    //     if (newArr[v]!=='duble') {
+    //         return newArr[v]
+    //     }
+    // }
+    );
 }
-
 
 
 function UniqueArray(arr) {
@@ -37,3 +43,31 @@ function UniqueArray(arr) {
 
 console.log(uniqueArray1(arr))
 console.log(UniqueArray(arr))
+
+
+// var data = [
+//     {name: 'Joe', age: 20},
+//     {name: 'Bill', age: 30},
+//     {name: 'Kate', age: 23}
+// ]
+// // function getNames(data){
+// //     for(i of data){
+// //         console.log(i.name, i.age);
+// //     }
+// // }
+// // getNames(data)
+//
+//
+//
+//
+//
+// //
+// //
+// //
+// // // getNames(data) // should return ['Joe', 'Bill', 'Kate']
+// //
+// // function getNames(data){
+// //     return data.map(function(item){return item.name});
+// // }
+// //
+// // console.log(getNames(data));
