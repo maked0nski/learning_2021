@@ -9,6 +9,16 @@ for (const favoriteItem of favoriteList) {
     button.onclick = function () {
         for (let i = 0; i < favoriteList.length; i++) {
             target = JSON.parse(element.innerText)
+
+
+            // console.log(favoriteList[i])       //
+            // console.log(target)
+            // console.log(favoriteList[i]==target)   // не розумію чому вони не дають true ???
+
+
+
+
+
             if (favoriteList[i].name === target.name && favoriteList[i].age === target.age && favoriteList[i].status === target.status) {
                 favoriteList.splice(i,1)
                 localStorage.setItem('favorites', JSON.stringify(favoriteList) )
