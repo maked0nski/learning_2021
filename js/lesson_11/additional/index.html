@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<fieldset id="four">
+    <form name="MyForms" id="MyForms">
+        <!--    Данные которые надо сохранять : ФИО, номер, почта, фирма, отдел, день рождения-->
+        <legend>Телефонний довідник</legend>
+        <label for="name">Введи ФИО</label>
+        <input type="text" name="name" id="name" placeholder="Введи ФИО">
+        <br>
+        <label for="tel">№ телефона</label>
+        <input type="number" name="tel" id="tel" placeholder="№ телефона">
+        <br>
+        <label for="mail">email</label>
+        <input type="email" name="mail" id="mail" placeholder="email">
+        <br>
+        <label for="work">фирма</label>
+        <input type="text" name="work" id="work" placeholder="фирма">
+        <br>
+        <label for="Department">отдел</label>
+        <textarea name="Department" id="Department" cols="60" rows="10" placeholder="отдел"></textarea>
+        <br>
+        <label for="DR">день рождения</label>
+        <input type="date" name="DR" id="DR" placeholder="день рождения">
+        <br>
+        <button type="submit" name="save" >Save</button>
+    </form>
+    <div id="content4"></div>
+</fieldset>
+
+
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@ let arr = [1, 2, 3, 4, 2, 5, 1];
 
 function uniqueArray1(arr) {
 
-    var newArr = {};
+    let newArr = {};
     arr.forEach(function (v) {
         if (typeof newArr[v]=='undefined'){
             newArr[v] = +v
