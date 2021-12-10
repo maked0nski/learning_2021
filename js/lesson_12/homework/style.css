@@ -1,0 +1,30 @@
+
+#wrapTask {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+}
+
+#pop {
+    width: 200px;
+    background-color: transparent;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+h6 {
+    margin-block-end: 0px;
+    color: lightgrey;
+
+}
+
+.postBlock {
+    padding: 15px;
+    margin: 20px;
+    border: 1px solid #dff3a4;
+}
+
+.bodyPost {
+    color: gray;
+}
