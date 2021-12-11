@@ -1,0 +1,58 @@
+#wrapTask {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+}
+h6 {
+    margin-block-end: 0;
+    color: lightgrey;
+}
+h3{
+    /*margin: 0;*/
+}
+.postBlock {
+    padding: 15px;
+    margin: 20px;
+    border: 1px solid #dff3a4;
+}
+.bodyPost {
+    color: gray;
+    padding-block: 10px;
+}
+
+#commentsBlock {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 1em 20px;
+    padding: 30px;
+    position: fixed;
+    width: 93%;
+    top: 30px;
+    left: 30px;
+    background-color: lightgrey;
+}
+
+#close {
+    position: fixed;
+    top: 35px;
+    left: 40px;
+
+}
+
+.commentbl {
+    border: 2px solid gray;
+    padding: 10px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.textBody {
+    padding-block-start: 10px;
+}
+
+span {
+    font-weight: bold;
+}
