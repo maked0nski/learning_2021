@@ -35,11 +35,11 @@ fetch('https://jsonplaceholder.typicode.com/posts')
                         // clear(commentsBlock)
                         let commentsDiv = document.createElement('div')
                         commentsDiv.id = 'commentsBlock';
-                        let bnt_Сlose = document.createElement('button')
-                        bntСlose.id = 'close'
-                        bntСlose.innerText = 'Закрити'
-                        bntСlose.onclick = () => clear('commentsBlock')
-                        commentsDiv.append(bntСlose)
+                        let bntX = document.createElement('button')
+                        bntX.id = 'close'
+                        bntX.innerText = 'Закрити'
+                        bntX.onclick = () => clear('commentsBlock')
+                        commentsDiv.append(bntX)
                         value.forEach(value => {
 
 
