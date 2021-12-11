@@ -32,7 +32,6 @@ fetch('https://jsonplaceholder.typicode.com/posts')
                 fetch(`https://jsonplaceholder.typicode.com/posts/${userId}/comments`)
                     .then(response => response.json())
                     .then(value => {
-                        // clear(commentsBlock)
                         let commentsDiv = document.createElement('div')
                         commentsDiv.id = 'commentsBlock';
                         let bntX = document.createElement('button')
@@ -41,7 +40,6 @@ fetch('https://jsonplaceholder.typicode.com/posts')
                         bntX.onclick = () => clear('commentsBlock')
                         commentsDiv.append(bntX)
                         value.forEach(value => {
-
 
                             let comment = document.createElement('div');
                             comment.classList = 'commentbl'
@@ -60,10 +58,8 @@ fetch('https://jsonplaceholder.typicode.com/posts')
                             comment.append(numberPost, userName, email, body)
                             commentsDiv.append(comment)
 
-
                         })
                         document.body.append(commentsDiv)
-
                     })
             }
 
