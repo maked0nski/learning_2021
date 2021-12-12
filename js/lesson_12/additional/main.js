@@ -62,10 +62,10 @@ fetch('https://jsonplaceholder.typicode.com/users')
                                                 let commentBlock = document.createElement('div');
                                                 commentBlock.classList = 'block'
                                                 let numberPostId = document.createElement('div');
-                                                numberPostId.innerText = `Повідомлення № ${comment.postId}`;
+                                                numberPostId.innerText = `ID Повідомлення № ${comment.postId}`;
 
                                                 let numberPost = document.createElement('div');
-                                                numberPost.innerText = `Повідомлення № ${comment.id}`;
+                                                numberPost.innerText = `Комментарій № ${comment.id}`;
 
                                                 let userName = document.createElement('div');
                                                 userName.innerText = `Ім'я - ${comment.name}`;
