@@ -37,6 +37,12 @@ fetch('https://jsonplaceholder.typicode.com/users')
                     .then(posts => {
                         let postWrap = document.createElement('div');
                         postWrap.id = 'postWrap';
+                        let bntX = document.createElement('button')
+                        bntX.id = 'close'
+                        bntX.innerText = 'Закрити'
+                        bntX.onclick = () => postWrap.remove()
+                        postWrap.append(bntX)
+
                         posts.forEach((post) => {
                             if (post.userId === user.id) {
                                 let postBlock = document.createElement('div');
@@ -58,6 +64,11 @@ fetch('https://jsonplaceholder.typicode.com/users')
                                         .then(comments => {
                                             // document.getElementById(postWrap).remove()
                                             postWrap.innerText='';
+                                            let bntX = document.createElement('button')
+                                            bntX.id = 'close'
+                                            bntX.innerText = 'Закрити'
+                                            bntX.onclick = () => postWrap.remove()
+                                            postWrap.append(bntX)
                                             comments.forEach(comment =>{
                                                 let commentBlock = document.createElement('div');
                                                 commentBlock.classList = 'block'
