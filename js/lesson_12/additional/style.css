@@ -1,0 +1,31 @@
+#usersWrap{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+}
+.block{
+    padding: 15px;
+    margin: 20px;
+    border: 1px solid #dff3a4;
+}
+#postWrap{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 1em 20px;
+    padding: 30px;
+    position: fixed;
+    width: 93%;
+    top: 30px;
+    left: 30px;
+    background-color: lightgrey;
+}
+#close {
+    position: fixed;
+    top: 35px;
+    left: 40px;
+}
+
+span {
+    font-weight: bold;
+}
