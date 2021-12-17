@@ -1,12 +1,12 @@
-let pop =document.createElement('div');
+let pop = document.createElement('div');
 pop.id = 'pop';
-let task1= document.createElement('button');
+let task1 = document.createElement('button');
 task1.innerText = 'Розібрати пости';
-task1.onclick = ()=>getPosts();
+task1.onclick = () => getPosts();
 pop.append(task1);
-let task2= document.createElement('button');
+let task2 = document.createElement('button');
 task2.innerText = 'Розібрати коменти';
-task2.onclick = ()=>getComments();
+task2.onclick = () => getComments();
 pop.append(task1, task2);
 document.body.append(pop);
 
@@ -20,7 +20,7 @@ function getPosts() {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
         .then(json => {
-            clear()
+                clear()
                 let divPosts = document.createElement('div');
                 divPosts.id = 'wrapTask';
 
@@ -38,7 +38,7 @@ function getPosts() {
                     let tagBodyPost = document.createElement('div');
                     tagBodyPost.classList = 'bodyPost';
                     tagBodyPost.innerHTML = `<h6>Text:</h6>${body}`
-                    divBlock.append(p,tagTitle,tagBodyPost)
+                    divBlock.append(p, tagTitle, tagBodyPost)
                     divPosts.append(divBlock)
                 })
                 document.body.append(divPosts)
@@ -55,12 +55,12 @@ function getPosts() {
 function getComments() {
     fetch('https://jsonplaceholder.typicode.com/comments')
         .then(value => value.json())
-        .then(value =>{
+        .then(value => {
             clear()
             let wrapTask = document.createElement('div')
             wrapTask.id = 'wrapTask'
-            value.forEach((value)=> {
-                let {postId, id, name, email,body} = value;
+            value.forEach((value) => {
+                let {postId, id, name, email, body} = value;
                 let divBlock = document.createElement('div');
                 divBlock.classList = 'postBlock';
                 let h4 = document.createElement('h4');
@@ -72,7 +72,7 @@ function getComments() {
                 let tagBodyPost = document.createElement('div');
                 tagBodyPost.classList = 'bodyPost';
                 tagBodyPost.innerHTML = `<h6>Text:</h6>${body}`
-                divBlock.append(h4,userEmail,tagBodyPost)
+                divBlock.append(h4, userEmail, tagBodyPost)
                 wrapTask.append(divBlock)
             })
             document.body.append(wrapTask)
@@ -80,10 +80,8 @@ function getComments() {
 }
 
 
-
-
 function clear() {
-    if(document.getElementById('wrapTask')){
+    if (document.getElementById('wrapTask')) {
         document.getElementById('wrapTask').remove()
     }
 }

@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="btn">CLICK</button>
+
+<script>
+
+  //  let elementById = document.getElementById('btn');
+  //
+  //  elementById.onclick = () => { // Асинхронна задача
+  //    console.log('CLICK')
+  //  }
+  //
+  //  let i = 0; // Синохронна задача
+  //  while (i < 999999999) {
+  //    i++
+  //  }
+
+  // let money = 100;
+
+  // function goWork(isJobDone) {
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       if (isJobDone) {
+  //         money += 400;
+  //         console.log('Job done');
+  //         resolve(money)
+  //       } else {
+  //         console.log('No money no honey');
+  //         reject('ERORO TEXT !!!')
+  //       }
+  //     }, 1000)
+  //   })
+  // }
+  //
+  // function flyToEgipit(dollars) {
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       console.log(dollars, '$');
+  //       if (dollars > 400) {
+  //         console.log('HOOORAY');
+  //         resolve('Drink beer')
+  //       } else {
+  //         console.log('Нала цього року лиш в Бердичів ((');
+  //         reject('Mdeee')
+  //       }
+  //     }, 3000)
+  //   })
+  // }
+  //
+  // async function holiday() {
+  //   try {
+  //     const payment = await goWork(false);
+  //     const result = await flyToEgipit(payment);
+  //
+  //     console.log(payment, 'payment');
+  //     console.log(result, 'result');
+  //   } catch (e) {
+  //     console.error(e)
+  //   }
+  // }
+  //
+  // holiday()
+
+  // const p1 = new Promise((resolve, reject) => {
+  //   reject(1)
+  // })
+  //
+  // const p2 = new Promise(resolve => {
+  //   resolve(2)
+  // })
+
+  // Promise.all([p2, p1])
+  //   .then(res => {
+  //     console.log(res);
+  //   })
+  //   .catch(e => {
+  //     console.log(' ERRRRR', e)
+  //   })
+
+  // Promise.allSettled([p2, p1])
+  //   .then(res => {
+  //     console.log(res);
+  //   })
+
+  //
+  // function eat() {
+  //   return new Promise((resolve, reject) => {
+  //     resolve('Ono')
+  //   })
+  // }
+  //
+  // goWork(true)
+  //   .then(payment => {
+  //     return flyToEgipit(payment) // 9999sec //1
+  //   })
+  //   .then(result => {
+  //     console.log(result);
+  //   })
+  //   .catch(e => {
+  //     console.error(e)
+  //   })
+  //   .finally(() => {
+  //     console.log('FINAL')
+  //   })
+
+  // let money = 100;
+  //
+  // function goWork(isJobDone, callback) {
+  //   setTimeout(() => {
+  //     if (isJobDone) {
+  //       money += 400;
+  //       console.log('Job done');
+  //       callback(null, money)
+  //     } else {
+  //       callback('No money no honey', null);
+  //     }
+  //   }, 1000)
+  // }
+  //
+  // function flyToEgipit(dollars, callback) {
+  //   setTimeout(() => {
+  //     console.log(dollars, '$');
+  //     if (dollars > 400) {
+  //       callback(null, 'HOOORAY')
+  //     } else {
+  //       callback('Нала цього року лиш в Бердичів ((', null)
+  //     }
+  //   }, 3000)
+  // }
+  //
+  // goWork(false, (err, payment) => {
+  //   if (err) {
+  //     console.error(err)
+  //   } else {
+  //     flyToEgipit(payment, (err1, data) => {
+  //       if (err1) {
+  //         console.error(err1)
+  //       } else  {
+  //         console.log(data)
+  //         goWork(true, () => {
+  //
+  //         })
+  //       }
+  //     })
+  //   }
+  // })
+
+
+  let users = [
+    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},
+    {name: 'Taras', age: 4}
+  ];
+  let users2 = [
+    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},    {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},   {name: 'Dima', age: 10},
+    {name: 'Nastya', age: 22},
+    {name: 'Karina', age: 15},
+    {name: 'Volodya', age: 19},
+    {name: 'Yarko', age: 39},
+    {name: 'Yevhen', age: 14},
+    {name: 'Taras', age: 4}
+  ];
+
+
+  console.time('REDUCE')
+
+  let usersWithCar = users.reduce((acc, user) => {
+    if (user.age >= 18) {
+      user.car = true;
+      acc[user.age] = user;
+    }
+
+    return acc;
+  }, {});
+
+  console.log(usersWithCar);
+
+  console.timeEnd('REDUCE');
+
+  console.time('MAP')
+
+  users2 = users2.filter(user => user.age > 18);
+
+  let map = users2.map(user => {
+    user.car = true;
+    return user;
+  });
+
+  console.log(map);
+  console.timeEnd('MAP')
+
+
+  // let number = users.reduce((acc, value) =>  {
+  //   console.log('_________________________');
+  //   console.log(acc);
+  //   console.log('_________________________');
+  //   return acc + value.age
+  // }, 0);
+  //
+  // console.log(number);
+
+
+  //  TODO HW
+  // Зробити свій розпорядок дня. // // У вас має бути більше 10 асинхронних дій з рандомними затримками.
+  // Вам необхідно синхронізувати всі свої дії за допомогою промісів та async await (Код має бути написаний окремо)
+  // Затримка має бути НЕ в порядку зростання, а будь яка. При тому ваші дії мають бути синхронізовані.
+  // // Напиклад. // Прикнутись - 0.3с // Поснідати - 1с // Піти в душ - 0.5с // Дочекатись автобус - 3с // Пообідати - 1с // // І так далі
+
+</script>
+</body>
+</html>
