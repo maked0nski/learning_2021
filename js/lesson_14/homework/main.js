@@ -26,7 +26,7 @@ function wakeUp() {
             vivacity += 100
             console.log(`Я виспався. Сил - ${vivacity}, Їжі - ${food}, грошей - ${money}`)
             resolve(vivacity)
-        }, 300)
+        }, timeOut())
     })
 }
 
@@ -38,7 +38,7 @@ function toWash(vivacity) {
                 console.log(`My face is clear.  Сил - ${vivacity}, Їжі - ${food}, грошей - ${money}`)
                 resolve(vivacity);
             } else reject(`You mast sleep.  Сил - ${vivacity}, Їжі - ${food}, грошей - ${money}`)
-        }, 300)
+        }, timeOut())
     })
 }
 
@@ -117,7 +117,7 @@ function myDay(awoke) {
                 console.log('Ти простав! тебе розстріляти мало!.')
                 reject(cheerfulness -= 10)
             }
-        }, getRandom())
+        }, timeOut())
     })
 }
 
@@ -131,7 +131,7 @@ function brushTeeth(overslept){
                 console.log('Нема часу на чистку зубів. Я Проспав!')
                 reject(overslept -= 10)
             }
-        }, getRandom())
+        }, timeOut())
     })
 }
 
@@ -145,7 +145,7 @@ function eat(cheerfulness){
                 console.log('Чого голодний? бо виспаний! Чого виспаний? Бо ПРОСПАВ!')
                 reject(cheerfulness -= 50)
             }
-        }, getRandom())
+        }, timeOut())
     })
 }
 
@@ -161,7 +161,7 @@ function goToWork(cheerfulness) {
                 console.log('Нема ні сил, ні бажання працювати')
                 reject(cheerfulness -= 50)
             }
-        }, getRandom())
+        }, timeOut())
     })
 }
 
@@ -180,7 +180,7 @@ function goBear (cheerfulness, money2){
                 console.log(money2)
                 reject ([cheerfulness, money2])
             }
-        }, getRandom())
+        }, timeOut())
     })
 }
 
@@ -200,7 +200,7 @@ function stripClub (cheerfulness, money2){
                 resolve([cheerfulness, money2])
 
             }
-        }, getRandom());
+        }, timeOut());
     })
 }
 
