@@ -48,6 +48,7 @@ select  model, COUNT(model)as number_of_machines from cars group by model;
 select * from cars where model like '_a%a_';
 
 -- найти все машины модели которых больше 8 символов
-select LENGTH(model)as length from cars where length>8
+select * from cars where length(model) > 8;
 
 -- ***найти машины цена которых больше чем цена среднего арифметического всех машин
+select * from cars where price > (select AVG(price) from cars);
