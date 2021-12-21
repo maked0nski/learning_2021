@@ -197,8 +197,7 @@ function stripClub (cheerfulness, money2){
                 console.log('Еще и обокрали !!! Денек просто ППЦ! ');
                 cheerfulness = 10;
                 money2 = 0;
-                resolve([cheerfulness, money2])
-
+                reject([cheerfulness, money2])
             }
         }, timeOut());
     })

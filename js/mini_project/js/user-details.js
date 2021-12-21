@@ -22,6 +22,21 @@ function creareTag(tag = 'div', innerText = undefined, id = undefined, clas = un
     return newTag;
 }
 
+// function getUserPosts(USER_ID) {
+//     fetch(`https://jsonplaceholder.typicode.com/users/${USER_ID}/posts`)
+//         .then(response => response.json())
+//         .then(posts => {
+//             console.log(posts)
+//             let wrapTitlePost = creareTag('div', undefined, 'wrapTitlePost')
+//             posts.forEach(post => {
+//                 let titlePost = creareTag('div', `${post.title}`, undefined, 'titlePost')
+//                 let btnPostDetails = creareTag('button', 'Детальніше про даний пост')
+//                 btnPostDetails.onclick = () => window.location = `post-details.html?user_id=${post.id}`
+//                 wrapTitlePost.append(titlePost, btnPostDetails)
+//             })
+//             document.body.append(wrapTitlePost)
+//         })
+// }
 
 let paramsString = document.location.search;
 let searchParams = new URLSearchParams(paramsString);
@@ -66,30 +81,35 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user_id}`)
         let address = creareTag('div', address_string, undefined, 'address');
 
         let addressGeo = creareTag('div', undefined, undefined, 'addressGeo');
-        let mapH3 = creareTag('h3');
-        mapH3.innerText = 'Показати адресу каристувача'
-        let mapDiv = creareTag('div', undefined, 'userMapGeo')
-        addressGeo.append(mapH3, mapDiv)
+        let mapP = creareTag('p', 'GEO координати каристувача');
+        let mapDiv = creareTag('div', `lat = ${user.address.geo.lat}, lng = ${user.address.geo.lng}`, 'userMapGeo')
+
+        addressGeo.append(mapP, mapDiv)
         addressBlock.append(address, addressGeo)
 
-        // function initMap() {
-        //     map = new google.maps.Map(document.getElementById("userMapGeo"), {
-        //         center: {lat: user.address.geo.lat, lng: user.address.geo.lng},
-        //         zoom: 8,
-        //     });
-        // }
-
-
-
-
-
-
         let btnPostUser = creareTag('button', 'Post of current user', 'postsUser');
-        btnPostUser.onclick = function (ev) {
-            console.log(ev)
+        btnPostUser.onclick = function () {
+
+            fetch(`https://jsonplaceholder.typicode.com/users/${user_id}/posts`)
+                .then(response => response.json())
+                .then(posts => {
+
+                    let wrapTitlePost = creareTag('div', undefined, 'wrapTitlePost');
+
+                    posts.forEach(post => {
+                        let titlePost = creareTag('div', `${post.title}`, undefined, 'titlePost');
+                        let btnPostDetails = creareTag('button', 'Детальніше про даний пост');
+
+                        btnPostDetails.onclick = () => window.location = `post-details.html?post_id=${post.id}&&username=${user.name}`;
+                        wrapTitlePost.append(titlePost, btnPostDetails);
+                    })
+
+                    document.body.append(wrapTitlePost);
+                })
         }
         wrapUserInfo.append(userId, name, username, phone, email, website, company, addressBlock, btnPostUser);
         wraper.append(wrapUserInfo);
     })
 
 document.body.append(wraper)
+
