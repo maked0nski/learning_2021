@@ -14,11 +14,11 @@
 // user-details.html - блок с информацией про user вверху страницы. Кнопка ниже, на 90% ширины страницы, по центру.
 // блоки с краткой информацией про post - в ряд по 5 объектов.
 // post-details.html - блок с информацией про пост вверху. Комментарии - по 4 в ряд.
-// Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы
+// Все без исключения элементы, который характеризируют user, post, comment визуализировать, так, что бы
 // было видно их блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)
 
 
- function creareTag(tag = 'div', innerText = undefined, id = undefined, clas = undefined) {
+function creareTag(tag = 'div', innerText = undefined, id = undefined, clas = undefined) {
     let newTag = document.createElement(tag);
     if (innerText) {
         newTag.innerText = innerText;
@@ -42,17 +42,19 @@ wraper.append(h1)
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(users => {
-        
+
         let wrapUsers = creareTag('div', undefined, 'wrapUsers')
-        
+
         users.forEach(user => {
-            let userId = creareTag('div', user.id, undefined, 'userID')
-            let userName = creareTag('div', user.name, undefined, 'userName')
+            let wrapUser = creareTag('div', undefined, undefined, 'wrapUser')
+            let userId = creareTag('div', `User ID : ${user.id}`, undefined, 'userID')
+            let userName = creareTag('div', `User name : ${user.name}`, undefined, 'userName')
             let userButton = creareTag('button', 'Детальна інформація про користувача', 'userButton')
-            userButton.onclick = ()=> window.location=`user-details.html?user_id=${user.id}`
-            wrapUsers.append(userId, userName,userButton)
+            userButton.onclick = () => window.location = `user-details.html?user_id=${user.id}`
+            wrapUser.append(userId, userName, userButton)
+            wrapUsers.append(wrapUser)
         })
-        
+
         wraper.append(wrapUsers)
     })
 

@@ -1,0 +1,36 @@
+#wraper {
+    width: 90%;
+    margin-inline: auto;
+    text-align: center;
+}
+#wrapUsers, #wrapTitlePost{
+    text-align: start;
+    padding: 1em;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: rgba(225, 225, 225, 0.34);
+    font-size: 16px;
+    display: grid;
+    grid-row-gap: 1em;
+}
+.addressGeo p{
+    margin-block-end: 5px;
+}
+#postsUser{
+    margin-inline: auto;
+    width: 90%;
+}
+#wrapTitlePost{
+    margin-block-start: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 1em;
+}
+.wrapPost{
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+}
+.titlePost{
+    height: 90px;
+}

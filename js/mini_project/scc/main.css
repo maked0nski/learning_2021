@@ -1,0 +1,30 @@
+#wraper {
+    width: 90%;
+    margin-inline: auto;
+    text-align: center;
+}
+
+#wrapUsers {
+    margin-block-start: 20px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+}
+
+.wrapUser {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: rgba(225, 225, 225, 0.34);
+}
+
+.userName {
+    margin-block: 8px;
+}
+
+#userButton {
+    margin-block-end: 5px;
+}

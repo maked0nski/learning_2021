@@ -81,7 +81,7 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user_id}`)
         let address = creareTag('div', address_string, undefined, 'address');
 
         let addressGeo = creareTag('div', undefined, undefined, 'addressGeo');
-        let mapP = creareTag('p', 'GEO координати каристувача');
+        let mapP = creareTag('p', 'GEO координати каристувача:');
         let mapDiv = creareTag('div', `lat = ${user.address.geo.lat}, lng = ${user.address.geo.lng}`, 'userMapGeo')
 
         addressGeo.append(mapP, mapDiv)
@@ -97,14 +97,17 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user_id}`)
                     let wrapTitlePost = creareTag('div', undefined, 'wrapTitlePost');
 
                     posts.forEach(post => {
+                        let wrapPost = creareTag('div', undefined, undefined, 'wrapPost');
+
                         let titlePost = creareTag('div', `${post.title}`, undefined, 'titlePost');
                         let btnPostDetails = creareTag('button', 'Детальніше про даний пост');
 
                         btnPostDetails.onclick = () => window.location = `post-details.html?post_id=${post.id}&&username=${user.name}`;
-                        wrapTitlePost.append(titlePost, btnPostDetails);
+                        wrapPost.append(titlePost, btnPostDetails)
+                        wrapTitlePost.append(wrapPost);
                     })
 
-                    document.body.append(wrapTitlePost);
+                    wraper.append(wrapTitlePost);
                 })
         }
         wrapUserInfo.append(userId, name, username, phone, email, website, company, addressBlock, btnPostUser);

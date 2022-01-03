@@ -63,7 +63,7 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${post_id}`)
 
                     console.log(comment)
 
-
+//TODO вивести коменти
 
                 })
                wraper.append(commentsWraper)
