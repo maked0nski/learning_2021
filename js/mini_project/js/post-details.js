@@ -27,25 +27,10 @@ function creareTag(tag = 'div', innerText = undefined, id = undefined, clas = un
     return newTag;
 }
 
-
-//
-// Promise.all([
-//     fetch(`https://jsonplaceholder.typicode.com/users/${user_id}/posts`),
-//     fetch(`https://jsonplaceholder.typicode.com/posts/${post_id}/comments`)
-// ])
-//     .then(([posts,comments]) => {
-//         [posts.json(), comments.json()]
-//     })
-//     .then(rezult => {
-//
-//         console.log(rezult)
-//         // console.log(comments)
-//     })
-
 fetch(`https://jsonplaceholder.typicode.com/posts/${post_id}`)
     .then(response => response.json())
     .then(post => {
-        console.log(post);
+        // console.log(post);
         let wraper = creareTag('div', undefined, 'wraper')
         let postWraper = creareTag('div', undefined, 'postWraper')
         let h1 = creareTag('h1', `Пост ID - ${post.id}  користувача "${username}" із id: ${post.userId}`)
@@ -59,12 +44,14 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${post_id}`)
             .then(comments => {
                 let commentsWraper = creareTag('div', undefined, 'commentsWraper')
                 comments.forEach(comment => {
+                    let wraperComments = creareTag('div', undefined, undefined, 'wraperComments')
+                    let commentId = creareTag('div', `ID : ${comment.id}`, undefined, 'commentId')
+                    let commentName = creareTag('div', `Name : ${comment.name}`, undefined, 'commentTitle')
+                    let commentEmail = creareTag('div', `Email : ${comment.email}`, undefined, 'commentBody')
+                    let commentBody = creareTag('div', `Body : ${comment.body}`, undefined, 'commentUserId')
 
-
-                    console.log(comment)
-
-//TODO вивести коменти
-
+                    wraperComments.append(commentId, commentName, commentEmail, commentBody)
+                    commentsWraper.append(wraperComments)
                 })
                wraper.append(commentsWraper)
             })

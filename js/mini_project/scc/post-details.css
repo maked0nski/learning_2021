@@ -1,0 +1,28 @@
+#wraper {
+    width: 90%;
+    margin-inline: auto;
+    text-align: center;
+}
+#postWraper div{
+    text-align: start;
+    font-size: 18px;
+}
+
+#commentsWraper{
+    text-align: start;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    margin-block-start: 20px;
+    margin-inline: auto;
+}
+.wraperComments{
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow:  5px 5px 5px 3px rgba(0, 0, 0, 0.34);
+}
+.wraperComments div{
+    padding-block: 5px;
+}
