@@ -18,24 +18,29 @@
 // было видно их блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)
 
 
-function creareTag(tag = 'div', innerText = undefined, id = undefined, clas = undefined) {
-    let newTag = document.createElement(tag);
-    if (innerText) {
-        newTag.innerText = innerText;
-    }
-    if (id) {
-        newTag.id = id;
-    }
-    if (clas) {
-        newTag.classList = clas
-    }
+// function creareTag(tag = 'div', innerText = undefined, id = undefined, clas = undefined) {
+//     let newTag = document.createElement(tag);
+//     if (innerText) {
+//         newTag.innerText = innerText;
+//     }
+//     if (id) {
+//         newTag.id = id;
+//     }
+//     if (clas) {
+//         newTag.classList = clas
+//     }
+//
+//     return newTag;
+// }
 
-    return newTag;
-}
 
+// let wraper = creareTag('div', undefined, 'wraper')'
+// let h1 = creareTag('h1', 'Список користувачів')
 
-let wraper = creareTag('div', undefined, 'wraper')
-let h1 = creareTag('h1', 'Список користувачів')
+let wraper = document.createElement('div')
+wraper.id = 'wraper'
+let h1 = document.createElement('h1')
+h1.innerText = 'Список користувачів'
 
 
 wraper.append(h1)
@@ -43,13 +48,30 @@ fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(users => {
 
-        let wrapUsers = creareTag('div', undefined, 'wrapUsers')
+        // let wrapUsers = creareTag('div', undefined, 'wrapUsers')
+        let wrapUsers = document.createElement('div')
+        wrapUsers.id = 'wrapUsers'
 
         users.forEach(user => {
-            let wrapUser = creareTag('div', undefined, undefined, 'wrapUser')
-            let userId = creareTag('div', `User ID : ${user.id}`, undefined, 'userID')
-            let userName = creareTag('div', `User name : ${user.name}`, undefined, 'userName')
-            let userButton = creareTag('button', 'Детальна інформація про користувача', 'userButton')
+            // let wrapUser = creareTag('div', undefined, undefined, 'wrapUser')
+            let wrapUser = document.createElement('div')
+            wrapUser.classList = 'wrapUser'
+
+            // let userId = creareTag('div', `User ID : ${user.id}`, undefined, 'userID')
+            let userId = document.createElement('div')
+            userId.innerText = `User ID : ${user.id}`
+            userId.classList = 'userId'
+
+            // let userName = creareTag('div', `User name : ${user.name}`, undefined, 'userName')
+            let userName = document.createElement('div')
+            userName.innerText = `User name : ${user.name}`
+            userName.classList = 'userName'
+
+            // let userButton = creareTag('button', 'Детальна інформація про користувача', 'userButton')
+            let userButton = document.createElement('button')
+            userButton.innerText = 'Детальна інформація про користувача'
+            userButton.id = 'userButton'
+
             userButton.onclick = () => window.location = `user-details.html?user_id=${user.id}`
             wrapUser.append(userId, userName, userButton)
             wrapUsers.append(wrapUser)

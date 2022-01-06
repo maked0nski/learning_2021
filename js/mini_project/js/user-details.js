@@ -1,5 +1,3 @@
-// TODO
-
 // На странице user-details.html:
 // 4 Вывести всю, без исключения, информацию про объект user на кнопку/ссылку которого был совершен клик ранее.
 // 5 Добавить кнопку "post of current user", при клике на которую, появляются title всех постов текущего юзера
@@ -22,27 +20,13 @@ function creareTag(tag = 'div', innerText = undefined, id = undefined, clas = un
     return newTag;
 }
 
-// function getUserPosts(USER_ID) {
-//     fetch(`https://jsonplaceholder.typicode.com/users/${USER_ID}/posts`)
-//         .then(response => response.json())
-//         .then(posts => {
-//             console.log(posts)
-//             let wrapTitlePost = creareTag('div', undefined, 'wrapTitlePost')
-//             posts.forEach(post => {
-//                 let titlePost = creareTag('div', `${post.title}`, undefined, 'titlePost')
-//                 let btnPostDetails = creareTag('button', 'Детальніше про даний пост')
-//                 btnPostDetails.onclick = () => window.location = `post-details.html?user_id=${post.id}`
-//                 wrapTitlePost.append(titlePost, btnPostDetails)
-//             })
-//             document.body.append(wrapTitlePost)
-//         })
-// }
-
 let paramsString = document.location.search;
 let searchParams = new URLSearchParams(paramsString);
 let user_id = searchParams.get("user_id");
 
 let wraper = creareTag('div', undefined, 'wraper')
+
+
 let h1 = creareTag('h1', `Повна інформація про користувача Id - ${user_id}`)
 
 
